@@ -1,1 +1,1 @@
-gunicorn highland_properties.wsgi --log-file -
+gunicorn highland_project.wsgi --log-file -
