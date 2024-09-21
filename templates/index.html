@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Highland Properties
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="image-container text-center">
+        <img src="{% static 'images/shutterstock_743951458-2.jpg' %}" alt="Highland Properties" class="img-fluid custom-image">
+        <div class="text-overlay">
+            <h1 class="overlay-heading"><b>Discover Your Perfect</b></h1>
+            <h1 class="overlay-heading"><b>Property Today</b></h1>
+            <p class="overlay-text">Real estate properties for sale and rent in our country</p>
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Search for properties..." aria-label="Search">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>    
+    <br>
+    <!-- New Section for Three Image Containers -->
+    <div class="row text-center">
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="image-card">
+                <img src="{% static 'images/d-architectural-house-model-blueprint-background-modern-home-design-real-estate-marketing-d-architectural-house-model-329881407.webp' %}" alt="Image 1" class="img-fluid">
+                <div class="text-overlay-image">
+                    <h2 class="overlay-heading"><b>10K +</b></h2>
+                    <p class="overlay-text">Happy Customers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="image-card">
+                <img src="{% static 'images/breno-assis-r3wawu5fi5q-unsplash.jpg' %}" alt="Image 2" class="img-fluid">
+                <div class="text-overlay-image">
+                    <h2 class="overlay-heading"><b>12K +</b></h2>
+                    <p class="overlay-text">Elegant Properties</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="image-card">
+                <img src="{% static 'images/Real estate agent offer house represented by model.webp' %}" alt="Image 3" class="img-fluid">
+                <div class="text-overlay-image">
+                    <h2 class="overlay-heading"><b>8+</b></h2>
+                    <p class="overlay-text">Years Of Services</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-us">
+        <div class="container">
+            <h3 class="text-center mb-4"><b>About Us</b></h3>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="about-text">
+                        Welcome to Highland Properties, where we excel in helping you find your ideal home or investment opportunity. Our dedicated team offers top-notch real estate services for buying, selling, or renting properties. With extensive market knowledge and a commitment to excellence, we provide tailored solutions to meet your needs. Discover a diverse selection of properties that fit your lifestyle and investment goals. Whether you’re seeking a cozy apartment or a luxurious estate, Highland Properties is your trusted partner in real estate. Let us guide you through a seamless process and ensure you find the perfect match for your needs.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'images/buildings.jpeg' %}" alt="About Us" class="img-fluid" style="border-radius: 30px; height: 300px; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+        <div class="container">
+            <h3 class="text-center mb-4"><b>What We Do</b></h3>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card-overlay"></div>
+                        <img src="{% static 'images/breno-assis-r3wawu5fi5q-unsplash.jpg' %}" alt="Service 1" class="img-fluid">
+                        <div class="card-text">
+                            <h4><b>Property Management</b></h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card-overlay"></div>
+                        <img src="{% static 'images/RE Digital marketing blog post.webp' %}" alt="Service 2" class="img-fluid">
+                        <div class="card-text">
+                            <h4><b>Negotiation and Offers</b></h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-container">
+                        <div class="card-overlay"></div>
+                        <img src="{% static 'images/istockphoto-1223731996-612x612.jpg' %}" alt="Service 3" class="img-fluid">
+                        <div class="card-text">
+                            <h4><b>Marketing and Advertising</b></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured py-5">
+        <div class="container">
+            <h6>Featured</h6>
+            <div class="row align-items-center">
+                <!-- Left Container (Heading) -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5><b>Real Estate</b></h5>
+                    <h5><b>Recommendation Of The</b></h5>
+                    <h5><b>Day</b></h5>
+                </div>
+                <!-- Right Container (Paragraph) -->
+                <div class="col-md-6">
+                    <p>Highland Properties is your premier destination for finding the perfect real estate solution. Whether you’re seeking a cozy apartment or a luxurious estate, our website offers a diverse selection of properties tailored to meet your needs. With user-friendly navigation, detailed listings, and high-quality images, Highland Properties ensures a seamless browsing experience. Our expert team is dedicated to providing exceptional service and helping you navigate the real estate market with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<br>
+    <section class="properties">
+        <div class="container">
+            <h1 class="bank-slider-heading text-center" style="font-size: 30px; font-family: 'Poppins', sans-serif;"><b>Latest Properties</b></h1>
+            <br>
+            <div class="row">
+                <!-- Container 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 1" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>2
+                            <i class="fa-solid fa-bath"></i>3 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Container 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 2" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>3
+                            <i class="fa-solid fa-bath"></i>4 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Container 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 3" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>2
+                            <i class="fa-solid fa-bath"></i>3 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!-- Container 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>2
+                            <i class="fa-solid fa-bath"></i>1 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Container 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>1
+                            <i class="fa-solid fa-bath"></i>3 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Container 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>2
+                            <i class="fa-solid fa-bath"></i>3 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!-- Container 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 1" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>2
+                            <i class="fa-solid fa-bath"></i>3 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Container 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 2" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>2
+                            <i class="fa-solid fa-bath"></i>3 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Container 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 3" class="img-fluid">
+                        </div>
+                        <div class="property-info">
+                            <h4>Highland Estates</h4>
+                            <p><i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
+                            <button class="btn">Know more</button>
+                            {% comment %} <i class="fa-solid fa-bed"></i>3
+                            <i class="fa-solid fa-bath"></i>2 {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<br>
+<div class="container bank-slider">
+    <h1 class="bank-slider-heading text-center" style="font-size: 32px; font-family: 'Poppins', sans-serif;"><b>Developers We Deal</b></h1>
+    <br>
+    <div class="bank-slider-wrapper">
+        <div class="bank-slide">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div class="bank-container">
+                        <img src="https://www.sknvibes.com/news/gfxz/image/Confident%20Group%20logo%202.jpg" alt="Bank Image 1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bank-container">
+                        <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/Layton.jpg" alt="Bank Image 2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bank-container">
+                        <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/Perfection.jpg" alt="Bank Image 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bank-slide">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div class="bank-container">
+                        <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/CAT.jpg" alt="Bank Image 4">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bank-container">
+                        <img src="https://www.logogenie.net/images/articles/best-construction-logos9.jpg" alt="Bank Image 5">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bank-container">
+                        <img src="https://businessempiremedia.com/wp-content/uploads/2024/07/larsen-toubro-vector-logo.png" alt="Bank Image 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<br>
+
+{% endblock %}
