@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6ruowuu7$q*a)@^b794)x4+si&0&z_kotyu1h7^)-(tj+qb*2@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['highland-project.onrender.com', '127.0.0.1', 'localhost']
 
@@ -117,7 +117,7 @@ USE_TZ = True
 
 # Static files settings
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files settings
 MEDIA_URL = '/media/'
