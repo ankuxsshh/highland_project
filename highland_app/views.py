@@ -12,3 +12,6 @@ def properties(request):
 
 def services(request):
     return render(request, 'services.html')
+
+def propertydetails(request):
+    return render(request, 'propertydetails.html')
