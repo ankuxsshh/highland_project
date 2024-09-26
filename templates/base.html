@@ -9,9 +9,191 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<style>
+    
+.navbar {
+    background-color: white; 
+  }
+  
+  .navbar-nav {
+    height: 50px;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .nav-link {
+    font-size: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .nav-link:hover {
+    color: #57545b;
+  }
+  
+  .navbar-collapse {
+    justify-content: center;
+  }
+   
+  .dropdown-menu {
+    background-color: white;
+  }
+  
+  #logo {
+    transition: transform 0.3s;
+  }
+  
+  .navbar {
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav .nav-item {
+      margin: 0;
+    }
+  
+  
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+  
+  
+    .navbar-collapse {
+      background-color: white;
+      position: absolute; 
+      top: 80px; 
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+  }
+  
+  
+  .fixed-buttons {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2000;
+    column-gap: 10px;
+  }
+  
+  .btn-whatsapp-pulse {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 50%;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    margin-bottom: 20px;
+  }
+  
+  .btn-whatsapp-pulse i {
+    font-size: 1.2rem;
+  }
+  
+  .whatsapp-button {
+    background: #25d366;
+  }
+  
+  .whatsapp-button::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    border: 5px solid #25d366;
+    opacity: 0.75;
+    animation-name: pulse-border;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+  
+  .call-button {
+    background: #1d6296;
+  }
+  
+  .call-button::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    border: 5px solid #1d547f;
+    opacity: 0.75;
+    animation-name: pulse-border;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    80% {
+      box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+    }
+  }
+  
+  @keyframes pulse-border {
+    0% {
+      padding: 20px;
+      opacity: 0.75;
+    }
+    75% {
+      padding: 40px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  
+  .footer {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .footer .container {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  @media (max-width: 767.98px) {
+    .fixed-buttons {
+      bottom: 15px;
+      right: 15px;
+    }
+  
+    .btn-whatsapp-pulse {
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      margin-bottom: 5px; 
+    }
+  
+    .footer .container {
+      padding: 10px;
+    }
+  }
+</style>
 <body>
 
 <!-- Navbar -->

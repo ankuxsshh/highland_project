@@ -8,93 +8,234 @@ Services
 
 {% block content %}
 <section class="parallax-section">
-    <div class="parallax-background services-parallax"> <!-- Add a specific class for services page -->
-        <div class="container text-center text-white d-flex align-items-center justify-content-center">
+    <div class="parallax-background properties-parallax">
+        <div class="container text-center text-white d-flex align-items-center justify-content-center min-vh-100">
             <div class="intro-text">
-                <h1 class="display-4 font-weight-bold">Our Services</h1> <!-- Change heading to match services -->
-                <a href="#services-content" class="btn custom-btn mt-4 scroll-down">Explore our services</a>
+                <h1 class="display-4 font-weight-bold">Our Services</h1>
+                <a href="#services-section" class="btn custom-btn mt-4 scroll-down">Explore Services</a>
             </div>
         </div>
     </div>
 </section>
-<div class="services-container">
-    <section id="services-content" class="container mt-5 text-center" style="font-size: 30px;">
-        <h2><b>What We Offer</b></h2>
-        <p class="text" style="font-size: 16px; font-family: 'Poppins', sans-serif;">We offer a range of services designed to meet your needs, including personalized consulting, project management, and tailored solutions. Our team of experts is dedicated to delivering high-quality support, ensuring efficiency and effectiveness in every project. With a focus on customer satisfaction, we strive to exceed your expectations every time.</p>
-    </section>
-    <br>
-    <br>
+
+<!-- Services Section -->
+<section id="services-section" class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="font-weight-bold">What We Offer</h2>
+        <p class="lead">Explore the range of services we provide to cater to your needs.</p>
+    </div>
+
     <div class="row">
-        <!-- Service Item 1 -->
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03851_8db77d7188.jpg" alt="Sell With Us">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Sell With Us</h5>
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03851_8db77d7188.jpg" alt="Service 1">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Sell with us</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Service Item 2 -->
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_Liam_and_Emma_2_112bb3543e.jpg" alt="Let With Us">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Let With Us</h5>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_Liam_and_Emma_2_112bb3543e.jpg" alt="Service 2">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Let with us</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Service Item 3 -->
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03657_3_1_382282369d.jpg" alt="Buy With Us">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Buy With Us</h5>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_shutterstock_1031148421_1_bd359860d3.jpg" alt="Service 3">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Mortgage Services</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Service Item 4 -->
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03590_copy_2_1_95aa0453d3.jpg" alt="Rent With Us">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Rent With Us</h5>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03657_3_1_382282369d.jpg" alt="Service 4">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Buy with us</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03590_copy_2_1_95aa0453d3.jpg" alt="Rent With Us">
-                <div class="card-body">
-                    <h5 class="card-title">Rent With Us</h5>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://www.officeinspiration.com/wp-content/uploads/LuxusITDubai-ZIKZAK4.jpg" alt="Service 5">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Rent with us</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_shutterstock_1031148421_1_bd359860d3.jpg" alt="Commercial">
-                <div class="card-body">
-                    <h5 class="card-title">Commercial</h5>
+
+        <!-- Card 6 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DSC_03590_copy_2_1_95aa0453d3.jpg" alt="Service 6">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Service 6</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_shutterstock_409925923_1_7d7709be52.jpg" alt="Off-Plan">
-                <div class="card-body">
-                    <h5 class="card-title">Off-Plan</h5>
+
+        <!-- Card 7 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_DJI_0022_copy_1_b55ba83687.jpg" alt="Service 7">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Service 7</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 service-item">
-            <div class="card">
-                <img src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_shutterstock_1802878510_1_b6a4ace673.jpg" alt="Mortgage Services">
-                <div class="card-body">
-                    <h5 class="card-title">Mortgage Services</h5>
+
+        <!-- Card 8 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card-overlay h-100">
+                <div class="card-img-wrapper">
+                    <img class="card-img-top" src="https://strapiallsopp.s3.eu-west-1.amazonaws.com/small_shutterstock_1802878510_1_b6a4ace673.jpg" alt="Service 8">
+                    <div class="card-overlay-text">
+                        <h5 class="card-title">Property Management</h5>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 <br>
+
+<style>
+    .parallax-background {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('https://img.freepik.com/premium-photo/real-estate-agent-working-with-model-house-table-office_977232-950.jpg?w=826') no-repeat center center;
+        background-attachment: fixed; 
+        background-size: cover;
+        height: 50vh; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        margin: 20px;
+    }
+    
+    .intro-text {
+        position: relative;
+        z-index: 2;
+        font-family: 'Poppins', sans-serif;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+    
+    .scroll-down {
+        animation: bounce 2s infinite;
+        background-color: rgba(255, 255, 255, 0.3); 
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .scroll-down:hover {
+        background-color: rgba(255, 255, 255, 0.5); 
+    }
+
+    /* Card Styling */
+    .card-overlay {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .card-img-wrapper {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .card-img-wrapper:hover .card-img-top {
+        transform: scale(1.2);
+    }
+
+    .card-overlay-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .card-overlay-text h5 {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .card-img-wrapper:hover .card-overlay-text {
+        opacity: 1;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 768px) {
+        .parallax-background {
+            background-attachment: scroll;
+        }
+        
+        .intro-text h1 {
+            font-size: 2.5rem;
+        }
+        
+        .card-img-wrapper {
+            height: 200px;
+        }
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+</style>
 
 {% endblock %}
