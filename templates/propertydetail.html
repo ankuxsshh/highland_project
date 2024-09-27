@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Property details
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <div class="row d-flex align-items-stretch">
+        <!-- Property Image Section -->
+        <div class="col-md-4 d-flex">
+            <div class="card mb-4" style="border-radius: 30px;">
+                <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 330px;" />
+            </div>
+        </div>
+
+        <!-- Property Details Section -->
+        <div class="col-md-4 d-flex">
+            <div class="card mb-4 w-100" style="border-radius: 30px;">
+                <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
+                <br />
+                <div class="card mb-4 w-100" style="border-radius: 30px;">
+                    <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Description Section -->
+        <div class="col-md-4 d-flex">
+            <div class="card mb-4 w-100" style="border-radius: 30px;">
+                <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
+                <br />
+                <div class="card mb-4 w-100" style="border-radius: 30px;">
+                    <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block styles %}
+<style>
+    .card {
+        border-radius: 30px;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 30px;
+    }
+    /* Ensure that the card height is the same */
+    .row.d-flex .col-md-4 .card {
+        height: 100%;
+        border-radius: 30px;
+    }
+</style>
+{% endblock %}
+
