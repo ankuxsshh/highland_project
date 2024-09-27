@@ -9,12 +9,10 @@
 {% block content %}
   <section class="parallax-section">
     <div class="parallax-background about-parallax">
-      <!-- Add a specific class for about page -->
       <div class="container text-center text-white d-flex align-items-center justify-content-center">
         <div class="intro-text">
           <br />
           <h1 class="display-4 font-weight-bold">Contact Us</h1>
-          <a href="#contact-form-section" class="btn custom-btn mt-4 scroll-down">Explore more. . .</a>
         </div>
       </div>
     </div>
@@ -45,16 +43,19 @@
         </div>
       </div>
 
-      <!-- Image Section -->
+      <!-- Google Map Section -->
       <div class="col-md-6 d-flex">
-        <div class="card shadow-sm w-100" style="border-radius: 30px;">
-          <img src="https://media.istockphoto.com/id/1458164457/photo/businessman-using-laptop-and-smartphone-with-contact-icons-on-virtual-screen-searching-web.jpg?s=612x612&w=0&k=20&c=MGgwv8LPiylmsFqbT2w2lfY2qTpBmnprS9O3oMjkkS8=" class="img-fluid" alt="Contact Us Image" style="border-radius: 30px;" />
+          <div class="text-center mt-2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7808.89176067129!2d75.37442101321412!3d11.874009094253042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43d2e02804173%3A0x625862778439b3e0!2sHighland%20Properties!5e0!3m2!1sen!2sin!4v1727442523170!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </div>
   </section>
-<br>
-<br>
+
+  <br />
+  <br />
+
   <style>
     .parallax-background {
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.adanirealty.com/-/media/project/realty/blogs/eoi-expression-of-interest-in-real-estate--a-comprehensive-guide.ashx') no-repeat center center;
@@ -117,9 +118,11 @@
       font-family: 'Poppins', sans-serif;
     }
     
-    .card img {
-      border-radius: 30px;
-      height: 510px;
+    #map {
+      border-radius: 30px; /* Ensures the map has rounded corners */
+      height: 500px;
+      max-width: fit-content;
     }
   </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 {% endblock %}
