@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Contact Us
+{% endblock %}
+
+{% block content %}
+  <section class="parallax-section">
+    <div class="parallax-background about-parallax">
+      <!-- Add a specific class for about page -->
+      <div class="container text-center text-white d-flex align-items-center justify-content-center">
+        <div class="intro-text">
+          <br />
+          <h1 class="display-4 font-weight-bold">Contact Us</h1>
+          <a href="#contact-form-section" class="btn custom-btn mt-4 scroll-down">Explore more. . .</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact-form-section" class="container mt-5 pt-5">
+    <div class="row d-flex justify-content-between align-items-center">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <div class="card p-4 bg-light" style="border-radius: 30px;">
+          <h3 class="font-weight-bold mb-4 text-center">Send Us A Message</h3>
+          <form>
+            <div class="form-group mb-3">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" style="border-radius: 30px; height: 50px;" />
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" style="border-radius: 30px;height: 50px;" />
+            </div>
+            <div class="form-group mb-3">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" style="border-radius: 30px"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="border-radius: 30px;height: 50px;">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="col-md-6 d-flex">
+        <div class="card shadow-sm w-100" style="border-radius: 30px;">
+          <img src="https://media.istockphoto.com/id/1458164457/photo/businessman-using-laptop-and-smartphone-with-contact-icons-on-virtual-screen-searching-web.jpg?s=612x612&w=0&k=20&c=MGgwv8LPiylmsFqbT2w2lfY2qTpBmnprS9O3oMjkkS8=" class="img-fluid" alt="Contact Us Image" style="border-radius: 30px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+<br>
+  <style>
+    .parallax-background {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.adanirealty.com/-/media/project/realty/blogs/eoi-expression-of-interest-in-real-estate--a-comprehensive-guide.ashx') no-repeat center center;
+      background-attachment: fixed;
+      background-size: cover;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      margin: 20px;
+    }
+    
+    .intro-text {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      color: white;
+    }
+    
+    .scroll-down {
+      animation: bounce 2s infinite;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    .scroll-down:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Styling for contact form and images */
+    #contact-form-section .form-control {
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    #contact-form-section .btn {
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .card {
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .card img {
+      border-radius: 30px;
+      height: 510px;
+    }
+  </style>
+{% endblock %}

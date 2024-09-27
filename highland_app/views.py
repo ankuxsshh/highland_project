@@ -7,11 +7,14 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
-def properties(request):
-    return render(request, 'properties.html')
+def property(request):
+    return render(request, 'property.html')
 
 def services(request):
     return render(request, 'services.html')
 
-def propertydetails(request):
-    return render(request, 'propertydetails.html')
+def contact(request):
+    return render(request, 'contact.html')
+
+def propertydetail(request):
+    return render(request, 'propertydetail.html')
