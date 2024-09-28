@@ -1,84 +1,74 @@
 .navbar {
     background-color: white;
+    padding: 10px 15px;
 }
 
 .navbar-nav {
-    height: 50px;
+    text-align: center; /* Center align items in desktop view */
 }
 
-.navbar-nav .nav-item {
-    margin-left: 15px;
-    margin-right: 15px;
-    color: black;
+.nav-item {
+    margin: 0 15px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 1000;
 }
 
 .nav-link {
-    font-size: 15px;
+    font-size: 16px;
     color: black;
     font-family: 'Poppins', sans-serif;
+    font-weight: 1000;
 }
 
 .nav-link:hover {
     color: #57545b;
-}
-
-.navbar-collapse {
-    justify-content: center;
-    background-color: white; /* To ensure white background in mobile */
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    transition: left 0.3s ease-in-out;
-    z-index: 999;
-}
-
-.navbar-collapse.show {
-    left: 0;
+    text-decoration: none;
 }
 
 #logo {
     transition: transform 0.3s;
 }
 
-.navbar {
-    padding: 0 15px;
-}
-
+/* Custom styles for dropdown */
 @media (max-width: 768px) {
-    .navbar-nav .nav-item {
-        margin: 0;
-        text-align: center;
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%; /* Full width for mobile */
+        background-color: white;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        padding-top: 60px; /* Space for toggler button */
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0);
     }
 
     .navbar-toggler {
         border-color: rgba(0, 0, 0, 0.1);
     }
 
-    .navbar-collapse {
-        background-color: white;
-        top: 0;
-        left: -100%;
-        width: 200px; /* Adjust width for the mobile slide-in effect */
-        height: 100%;
-        transition: left 0.3s ease;
-    }
-
-    .navbar-collapse.show {
-        left: 50;
+    .nav-item {
+        margin: 20px 0; /* Spacing between items */
+        text-align: center; /* Center items in mobile view */
     }
 
     .nav-link {
-        padding: 10px 20px;
-    }
-
-    .navbar-toggler {
-        margin-right: 15px;
+        padding: 10px 0; /* Adjust padding for mobile */
     }
 }
+
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: flex !important; /* Ensure it remains visible */
+        justify-content: center; /* Center items in desktop view */
+    }
+}
+
 
 .fixed-buttons {
     position: fixed;
