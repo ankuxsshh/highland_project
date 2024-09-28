@@ -54,50 +54,98 @@
     <!-- Property Info and Features Section with 2 Column Layout -->
     <div class="row">
       <!-- Property Info Card -->
-      <div class="col-12 col-md-6 mb-4">
-        <div class="card info_card p-3" style="border-radius: 20px;">
-          <h4 class="text-center font-weight-bold">Property Info</h4>
-          <br />
-          <ul class="list-unstyled text-justify">
-            <li class="d-flex align-items-center mb-2">
-              <i class="fas fa-bed mr-2"></i> <strong>Bedrooms:</strong> 4
-            </li>
-            <li class="d-flex align-items-center mb-2">
-              <i class="fas fa-bath mr-2"></i> <strong>Bathrooms:</strong> 3
-            </li>
-            <li class="d-flex align-items-center mb-2">
-              <i class="fas fa-ruler-combined mr-2"></i> <strong>Area:</strong> 2500 sqft
-            </li>
-            <li class="d-flex align-items-center">
-              <b><i>₹</i></b> <strong>Price:</strong> 500,000
-            </li>
-          </ul>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card info_card p-3" style="border-radius: 20px;">
+              <h4 class="text-center font-weight-bold">Property Information</h4>
+              <br />
+              <div class="row">
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li class="d-flex align-items-center mb-3">
+                      <i class="fas fa-bed mr-2"></i> <strong>Bedrooms:</strong>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                      <i class="fas fa-bath mr-2"></i> <strong>Bathrooms:</strong>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                      <i class="fas fa-ruler-combined mr-2"></i> <strong>Area:</strong>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                      <i class="fas fa-dollar-sign mr-2"></i> <strong>Price:</strong>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="list-unstyled text-right">
+                    <li class="mb-3">
+                      <strong>4</strong>
+                    </li>
+                    <li class="mb-3">
+                      <strong>3</strong>
+                    </li>
+                    <li class="mb-3">
+                      <strong>2500 sqft</strong>
+                    </li>
+                    <li class="mb-3">
+                      <strong>$500,000</strong>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
+      </div>      
       <!-- Features Card -->
       <div class="col-12 col-md-6 mb-4">
         <div class="card info_card p-3" style="border-radius: 20px;">
-          <h4 class="text-center font-weight-bold">Features</h4>
+          <h4 class="text-center font-weight-bold">Property Features</h4>
           <br />
-          <ul class="list-unstyled text-justify">
-            <li class="d-flex align-items-center mb-2">
-              <i class="fas fa-wifi mr-2"></i> <strong>Wi-Fi:</strong> Available
-            </li>
-            <li class="d-flex align-items-center mb-2">
-              <i class="fas fa-swimming-pool mr-2"></i> <strong>Swimming Pool:</strong> Yes
-            </li>
-            <li class="d-flex align-items-center mb-2">
-              <i class="fas fa-car mr-2"></i> <strong>Parking Spaces:</strong> 2
-            </li>
-            <li class="d-flex align-items-center">
-              <i class="fas fa-tree mr-2"></i> <strong>Garden:</strong> Yes
-            </li>
-          </ul>
+          <div class="row">
+            <div class="col-12">
+              <div class="row mb-3">
+                <div class="col-6 d-flex align-items-center">
+                  <i class="fas fa-wifi mr-2"></i>
+                  <strong>Wi-Fi</strong>
+                </div>
+                <div class="col-6 text-right">
+                  Available
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-6 d-flex align-items-center">
+                  <i class="fas fa-swimming-pool mr-2"></i>
+                  <strong>Swimming Pool</strong>
+                </div>
+                <div class="col-6 text-right">
+                  Available
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-6 d-flex align-items-center">
+                  <i class="fas fa-car mr-2"></i>
+                  <strong>Parking Spaces</strong>
+                </div>
+                <div class="col-6 text-right">
+                  2spaces
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-6 d-flex align-items-center">
+                  <i class="fas fa-tree mr-2"></i>
+                  <strong>Garden</strong>
+                </div>
+                <div class="col-6 text-right">
+                  Yes
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </div>      
     </div>
-yesno
     <!-- Property Description Section -->
     <div class="row mt-4">
       <div class="col-12">
@@ -109,20 +157,21 @@ yesno
           </p>
           <div class="d-flex justify-content-end mt-4">
             <!-- WhatsApp Button -->
-            <a href="" target="_blank" class="btn btn-success rounded-circle mr-5">
+            <a href="" target="_blank" class="btn btn-success rounded-circle btn-icon-animation mx-2">
               <i class="fab fa-whatsapp"></i>
             </a>
             <!-- Call Button -->
-            <a href="" class="btn btn-primary rounded-circle mr-5">
+            <a href="" class="btn btn-primary rounded-circle btn-icon-animation mx-2">
               <i class="fas fa-phone"></i>
             </a>
             <!-- Email Button -->
-            <a href="" class="btn btn-danger rounded-circle">
+            <a href="" class="btn btn-danger rounded-circle btn-icon-animation mx-2">
               <i class="fas fa-envelope"></i>
             </a>
-          </div>
+          </div>          
         </div>
       </div>
     </div>
   </div>
+  <br>
 {% endblock %}

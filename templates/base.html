@@ -19,9 +19,13 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/highlandlogo.jpg' %}" alt="" width="80" height="80" class="d-inline-block align-top" id="logo" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static 'images/highlandlogo.jpg' %}" alt="" width="80" height="80" class="d-inline-block align-top" id="logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <b><a class="nav-link" href="{% url 'index' %}">Home</a></b>
@@ -41,14 +45,14 @@
         </ul>
       </div>
     </nav>
+
     <!-- WhatsApp and Call Buttons -->
     <div class="fixed-buttons">
-      <a href="#" class="btn-whatsapp-pulse call-button"><i class="fa-solid fa-phone"></i></a>
-      <a href="#" class="btn-whatsapp-pulse whatsapp-button"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="" class="btn-whatsapp-pulse call-button"><i class="fa-solid fa-phone"></i></a>
+      <a href="" class="btn-whatsapp-pulse whatsapp-button"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     {% block content %}
-
     {% endblock %}
 
     <!-- Footer -->
@@ -61,45 +65,25 @@
           <div class="col-md-3 mb-3">
             <h5 class="font-weight-bold">Explore</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="#" class="text-dark">About Us</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark">Contact Us</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark">Privacy Policy</a>
-              </li>
+              <li><a href="{% url 'about' %}" class="text-dark">About Us</a></li>
+              <li><a href="{% url 'contact' %}" class="text-dark">Contact Us</a></li>
+              <li><a href="" class="text-dark">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="col-md-3 mb-3">
             <h5 class="font-weight-bold">Services</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="#" class="text-dark">Consulting</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark">Development</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark">Support</a>
-              </li>
+              <li><a href="" class="text-dark">Consulting</a></li>
+              <li><a href="" class="text-dark">Development</a></li>
+              <li><a href="" class="text-dark">Support</a></li>
             </ul>
           </div>
           <div class="col-md-3 mb-3">
             <h5 class="font-weight-bold">Contact Us</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="mailto:highlandproperties@gmail.com" class="text-dark">highlandproperties@gmail.com</a>
-              </li>
-              <li>
-                <a href="" class="text-dark">+91 98460 86211</a>
-                <br />
-                <a href="" class="text-dark">+91 9446063333</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark">Kerala, India</a>
-              </li>
+              <li><a href="mailto:highlandproperties@gmail.com" class="text-dark">highlandproperties@gmail.com</a></li>
+              <li><a href="" class="text-dark">+91 98460 86211</a><br /><a href="" class="text-dark">+91 9446063333</a></li>
+              <li><a href="" class="text-dark">Kerala, India</a></li>
             </ul>
           </div>
         </div>
@@ -108,8 +92,7 @@
             <p class="mb-0">&copy; 2024 Highland Properties. All Rights Reserved.</p>
           </div>
           <div class="col-md-6 text-right">
-            Designed and Developed by
-            <a href="https://inspirezesttechnologies.com" target="_blank">InspireZest Technologies Pvt. Ltd.</a>
+            Designed and Developed by <a href="https://inspirezesttechnologies.com" target="_blank">InspireZest Technologies Pvt. Ltd.</a>
           </div>
         </div>
       </div>

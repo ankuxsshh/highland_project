@@ -18,25 +18,24 @@
     </div>
   </section>
 
-  <!-- Contact Form Section -->
-  <section id="contact-form-section" class="container mt-5 pt-5">
-    <div class="row d-flex justify-content-center">
+  <section class="contact-form-section container mt-5">
+    <div class="row">
       <!-- Contact Form -->
-      <div class="col-12 col-md-6">
-        <div class="card p-4 bg-light mx-auto" style="border-radius: 30px; max-width: 360px;">
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card p-4 bg-light mx-auto" style="border-radius: 30px;">
           <h3 class="font-weight-bold mb-4 text-center">Send Us A Message</h3>
           <form>
             <div class="form-group mb-3">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter your name" />
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required />
             </div>
             <div class="form-group mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email" />
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
             </div>
             <div class="form-group mb-3">
               <label for="message">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+              <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
           </form>
@@ -44,9 +43,15 @@
       </div>
 
       <!-- Google Map Section -->
-      <div class="col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center">
+      <div class="col-12 col-md-6">
         <div class="text-center">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7808.89176067129!2d75.37442101321412!3d11.874009094253042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43d2e02804173%3A0x625862778439b3e0!2sHighland%20Properties!5e0!3m2!1sen!2sin!4v1727442523170!5m2!1sen!2sin" width="360" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7808.89176067129!2d75.37442101321412!3d11.874009094253042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43d2e02804173%3A0x625862778439b3e0!2sHighland%20Properties!5e0!3m2!1sen!2sin!4v1727442523170!5m2!1sen!2sin" 
+            width="360" 
+            height="450" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
         </div>
       </div>
     </div>
@@ -54,5 +59,4 @@
 
   <br />
   <br />
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 {% endblock %}
