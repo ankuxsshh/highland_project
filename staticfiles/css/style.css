@@ -69,7 +69,6 @@
     }
 }
 
-
 .fixed-buttons {
     position: fixed;
     bottom: 15px;
@@ -730,53 +729,6 @@
     }
 }
 
-.parallax-background {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.adanirealty.com/-/media/project/realty/blogs/eoi-expression-of-interest-in-real-estate--a-comprehensive-guide.ashx') no-repeat center center;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    margin: 20px;
-}
-
-.intro-text {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    color: white;
-}
-
-.scroll-down {
-    animation: bounce 2s infinite;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.scroll-down:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 .card {
     transition: transform 0.3s;
     border-radius: 20px;
@@ -810,41 +762,6 @@
     margin: 0 auto;
     /* Center-aligns the text block */
     font-family: 'Poppins', sans-serif;
-}
-
-.parallax-background {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/premium-photo/real-estate-agent-working-with-model-house-table-office_977232-950.jpg?w=826') no-repeat center center;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    margin: 20px;
-}
-
-.intro-text {
-    position: relative;
-    z-index: 2;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-.scroll-down {
-    animation: bounce 2s infinite;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.scroll-down:hover {
-    background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Card Styling */
@@ -925,53 +842,6 @@
     }
 }
 
-.parallax-background {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/hd/real-estate-background-4pw2hh1ulns5g1yo.jpg') no-repeat center center;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    margin: 20px;
-}
-
-.intro-text {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    color: white;
-}
-
-.scroll-down {
-    animation: bounce 2s infinite;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.scroll-down:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 .card {
     border-radius: 30px;
 }
@@ -989,36 +859,6 @@
     border-radius: 30px;
 }
 
-.parallax-background {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.istockphoto.com/id/1409298953/photo/real-estate-agents-shake-hands-after-the-signing-of-the-contract-agreement-is-complete.jpg?s=612x612&w=0&k=20&c=SFybbpGMB0wIoI0tJotFqptzAYK_mICVITNdQIXqnyc=') no-repeat center center;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    margin: 20px;
-}
-
-.intro-text {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    color: white;
-}
-
-.scroll-down {
-    animation: bounce 2s infinite;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
 
 .enquire-section {
     position: absolute;

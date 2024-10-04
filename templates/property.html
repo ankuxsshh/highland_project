@@ -16,206 +16,397 @@
       </div>
     </div>
   </section>
+  <div class="container mt-5">
+    <section class="filter-section">
+      <h2 class="filter-title text-center"><b>Filter</b></h2>
+      <br>
+      <div class="row mb-3">
+        <!-- Property Type -->
+        <div class="col-md-3 mb-3">
+          <label for="propertyType"></label>
+          <select class="form-control" id="propertyType">
+            <option value="">Select Type</option>
+            <option value="singleFamilyHome">Single Family Home</option>
+            <option value="apartment">Apartment</option>
+            <option value="commercial">Commercial</option>
+            <option value="land">Land</option>
+            <option value="multiFamily">Multi-Family</option>
+          </select>
+        </div>
+  
+        <!-- Price Range -->
+        <div class="col-md-3 mb-3">
+          <label for="priceRange"></label>
+          <select class="form-control" id="priceRange">
+            <option value="">Select Price Range</option>
+            <option value="under200K">Under $200K</option>
+            <option value="200Kto500K">$200K - $500K</option>
+            <option value="500Kto1M">$500K - $1M</option>
+            <option value="over1M">> $1M</option>
+          </select>
+        </div>
+  
+        <!-- Minimum Price -->
+        <div class="col-md-3 mb-3">
+          <label for="minPrice"></label>
+          <select class="form-control" id="minPrice">
+            <option value="">Select Min Price</option>
+            <option value="0">0</option>
+            <option value="100000">100,000</option>
+            <option value="200000">200,000</option>
+            <option value="300000">300,000</option>
+            <option value="400000">400,000</option>
+            <option value="500000">500,000</option>
+            <option value="600000">600,000</option>
+            <option value="700000">700,000</option>
+            <option value="800000">800,000</option>
+            <option value="900000">900,000</option>
+            <option value="1000000">1,000,000</option>
+          </select>
+        </div>
+  
+        <!-- Maximum Price -->
+        <div class="col-md-3 mb-3">
+          <label for="maxPrice"></label>
+          <select class="form-control" id="maxPrice">
+            <option value="">Select Max Price</option>
+            <option value="100000">100,000</option>
+            <option value="200000">200,000</option>
+            <option value="300000">300,000</option>
+            <option value="400000">400,000</option>
+            <option value="500000">500,000</option>
+            <option value="600000">600,000</option>
+            <option value="700000">700,000</option>
+            <option value="800000">800,000</option>
+            <option value="900000">900,000</option>
+            <option value="1000000">1,000,000</option>
+            <option value="over1M">Over $1M</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row">
+        <!-- Minimum Sq. Ft -->
+        <div class="col-md-3 mb-3">
+          <label for="minSqFt"></label>
+          <select class="form-control" id="minSqFt">
+            <option value="">Select Min Sq. Ft</option>
+            <option value="0">0</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+            <option value="1500">1500</option>
+            <option value="2000">2000</option>
+            <option value="2500">2500</option>
+            <option value="3000">3000</option>
+            <option value="3500">3500</option>
+            <option value="4000">4000</option>
+          </select>
+        </div>
+  
+        <!-- Maximum Sq. Ft -->
+        <div class="col-md-3 mb-3">
+          <label for="maxSqFt"></label>
+          <select class="form-control" id="maxSqFt">
+            <option value="">Select Max Sq. Ft</option>
+            <option value="1000">1000</option>
+            <option value="1500">1500</option>
+            <option value="2000">2000</option>
+            <option value="2500">2500</option>
+            <option value="3000">3000</option>
+            <option value="3500">3500</option>
+            <option value="4000">4000</option>
+            <option value="4500">4500</option>
+            <option value="5000">5000</option>
+            <option value="over5000">Over 5000</option>
+          </select>
+        </div>
+  
+        <!-- Bedrooms -->
+        <div class="col-md-3 mb-3">
+          <label for="bedrooms"></label>
+          <select class="form-control" id="bedrooms">
+            <option value="">Select Bedrooms</option>
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option>
+            <option value="4">4 Bedrooms</option>
+            <option value="5">5 Bedrooms</option>
+            <option value="6">6+ Bedrooms</option>
+          </select>
+        </div>
+      </div>
+    </section>
+  </div>
+  
   <br />
   <section class="properties">
     <div class="container">
       <h1 class="bank-slider-heading text-center" style="font-size: 30px; font-family: 'Poppins', sans-serif;"><b>Latest Properties</b></h1>
       <br />
-
+      <br />
       <div class="row">
-        <!-- Property Card 1 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 1" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 1" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
-
-        <!-- Property Card 2 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 2" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 2" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
-
-        <!-- Property Card 3 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 3" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 3" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- More property rows for mobile responsiveness -->
+      <br />
+      <!-- More Property Containers -->
       <div class="row">
-        <!-- Property Card 4 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
-
-        <!-- Property Card 5 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
-
-        <!-- Property Card 6 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
       </div>
+      <br />
       <div class="row">
-        <!-- Property Card 4 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
-
-        <!-- Property Card 5 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
-
-        <!-- Property Card 6 -->
-        <div class="col-md-4 col-sm-6 col-12 mb-4">
-          <a href="{% url 'propertydetail' %}" class="property-card-link">
-            <div class="property-card">
-              <div class="property-image">
-                <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid" />
-              </div>
-              <div class="property-info">
-                <h4>Highland Estates</h4>
-                <p><i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm</p>
-                <p>
-                  <i class="fas fa-bed mr-2"></i> 4 |
-                  <i class="fas fa-bath mr-2"></i> 3 |
-                  <i class="fas fa-ruler-combined mr-2"></i> 2500sqft
-                </p>
-                <button class="btn">Know more</button>
-              </div>
+        <!-- Container 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid" />
             </div>
-          </a>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- Pagination -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="">1</a></li>
+          <li class="page-item"><a class="page-link" href="">2</a></li>
+          <li class="page-item"><a class="page-link" href="">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </section>
 {% endblock %}
+
+<style>
+  .filter-section {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+
+  .filter-title {
+    flex-basis: 100%;
+    margin-bottom: 15px;
+  }
+
+  .filter-item {
+    flex: 1 1 20%; /* Adjust the width of the filter items */
+    min-width: 180px; /* Set a minimum width for the items */
+  }
+
+  .property-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .property-card:hover {
+    transform: scale(1.05);
+  }
+
+  .property-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .property-info {
+    padding: 15px;
+  }
+
+  .property-info h4 {
+    margin: 0 0 10px;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+</style>
