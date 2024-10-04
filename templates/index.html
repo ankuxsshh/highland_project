@@ -56,17 +56,20 @@
         </div>
       </div>
     </div>
-
+<br>
+<br>
     <section class="about-us">
       <h3 class="text-center mb-4" style="font-size: 35px;"><b>About Us</b></h3>
       <br />
       <div class="container d-flex justify-content-center">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <p class="about-text text-justify">Highland Properties is a 25-year-old real estate firm headquartered in Kerala. Our goal is to provide our customers with the highest quality commercial real estate services available, while maintaining a focus on customer service and satisfaction. We aim to be your go-to source for all of your commercial real estate needs. Whether you're looking for offices or warehouses, Highland will find the perfect space for your company's needs. We offer our clients a wide variety of options in each category, but if nothing suits your needs we'll work with you to develop an innovative solution that meets your specifications. We believe in providing honest advice and top-quality service so that our clients can make informed decisions about their investments and grow their businesses without fear of being left behind by the competition. At Highland Properties, we understand that commercial real estate is not just about buying and selling property. It's also about finding the right tenants for your property, and having a team of professionals who can deliver on your vision for the space.</p>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 d-flex flex-column justify-content-center p-2">
+            <p class="about-text" style="font-size: 1rem; text-align: justify;">
+              Highland Properties is a 25-year-old real estate firm headquartered in Kerala. Our goal is to provide our customers with the highest quality commercial real estate services available, while maintaining a focus on customer service and satisfaction. We aim to be your go-to source for all of your commercial real estate needs. Whether you're looking for offices or warehouses, Highland will find the perfect space for your company's needs. We offer our clients a wide variety of options in each category, but if nothing suits your needs we'll work with you to develop an innovative solution that meets your specifications. We believe in providing honest advice and top-quality service so that our clients can make informed decisions about their investments and grow their businesses without fear of being left behind by the competition. At Highland Properties, we understand that commercial real estate is not just about buying and selling property. It's also about finding the right tenants for your property, and having a team of professionals who can deliver on your vision for the space.
+            </p>
           </div>
-          <div class="col-md-6 d-flex justify-content-center">
-            <img src="https://thearchitectsdiary.com/wp-content/uploads/2020/06/Property-.jpg" alt="About Us" class="img-fluid about-image" />
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="https://thearchitectsdiary.com/wp-content/uploads/2020/06/Property-.jpg" alt="About Us" class="img-fluid about-image" style="height: 100%; max-height: 320px; border-radius: 20px; width: 490px;" />
           </div>
         </div>
       </div>
@@ -113,7 +116,7 @@
     </section>
 
     <section class="featured py-5">
-      <div class="container">
+      <div class="container bg-light">
         <h6>Featured</h6>
         <div class="row align-items-center">
           <!-- Left Container (Heading) -->
@@ -122,8 +125,9 @@
             <h5><b>Recommendation Of The</b></h5>
             <h5><b>Day</b></h5>
           </div>
+          <br>
           <!-- Right Container (Paragraph) -->
-          <div class="col-md-6">
+          <div class="col-md-6 bg-light">
             <p class="text-justify">Highland Properties is your premier destination for finding the perfect real estate solution. Whether you’re seeking a cozy apartment or a luxurious estate, our website offers a diverse selection of properties tailored to meet your needs. With user-friendly navigation, detailed listings, and high-quality images, Highland Properties ensures a seamless browsing experience. Our expert team is dedicated to providing exceptional service and helping you navigate the real estate market with confidence.</p>
           </div>
         </div>
@@ -134,7 +138,7 @@
 
     <section class="properties">
       <div class="container">
-        <h1 class="bank-slider-heading text-center" style="font-size: 30px; font-family: 'Poppins', sans-serif;"><b>Latest Properties</b></h1>
+        <h1 class="bank-slider-heading text-center" style="font-size: 38px; font-family: 'Poppins', sans-serif;"><b>Latest Properties</b></h1>
         <br />
         <br />
         <div class="row">
@@ -421,4 +425,21 @@
   </div>
   <br />
   <br />
+
+<style>
+  .about-us .row {
+    height: 100%;
+  }
+
+  .about-us .about-text {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .about-us .about-text {
+      font-size: 1.1rem;
+    }
+  }
+</style>
 {% endblock %}

@@ -16,128 +16,112 @@
       </div>
     </div>
   </section>
+
   <div class="container mt-5">
-    <section class="filter-section">
-      <h2 class="filter-title text-center"><b>Filter</b></h2>
-      <br>
+    <section class="filter-section bg-light" style="padding: 30px;">
+      <br />
+
       <div class="row mb-3">
         <!-- Property Type -->
         <div class="col-md-3 mb-3">
-          <label for="propertyType"></label>
-          <select class="form-control" id="propertyType">
-            <option value="">Select Type</option>
-            <option value="singleFamilyHome">Single Family Home</option>
-            <option value="apartment">Apartment</option>
-            <option value="commercial">Commercial</option>
-            <option value="land">Land</option>
-            <option value="multiFamily">Multi-Family</option>
-          </select>
+          <label for="propertyType"><b>Property Type</b></label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="singleFamilyHome" value="singleFamilyHome" />
+            <label class="form-check-label" for="singleFamilyHome">Single Family Home</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="apartment" value="apartment" />
+            <label class="form-check-label" for="apartment">Apartment</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="commercial" value="commercial" />
+            <label class="form-check-label" for="commercial">Commercial</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="land" value="land" />
+            <label class="form-check-label" for="land">Land</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="multiFamily" value="multiFamily" />
+            <label class="form-check-label" for="multiFamily">Multi-Family</label>
+          </div>
         </div>
-  
+
         <!-- Price Range -->
         <div class="col-md-3 mb-3">
-          <label for="priceRange"></label>
-          <select class="form-control" id="priceRange">
-            <option value="">Select Price Range</option>
-            <option value="under200K">Under $200K</option>
-            <option value="200Kto500K">$200K - $500K</option>
-            <option value="500Kto1M">$500K - $1M</option>
-            <option value="over1M">> $1M</option>
-          </select>
+          <label for="priceRange"><b>Price Range</b></label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="under200K" value="under200K" />
+            <label class="form-check-label" for="under200K">Under $200K</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="200Kto500K" value="200Kto500K" />
+            <label class="form-check-label" for="200Kto500K">$200K - $500K</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="500Kto1M" value="500Kto1M" />
+            <label class="form-check-label" for="500Kto1M">$500K - $1M</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="over1M" value="over1M" />
+            <label class="form-check-label" for="over1M">Over $1M</label>
+          </div>
         </div>
-  
-        <!-- Minimum Price -->
-        <div class="col-md-3 mb-3">
-          <label for="minPrice"></label>
-          <select class="form-control" id="minPrice">
-            <option value="">Select Min Price</option>
-            <option value="0">0</option>
-            <option value="100000">100,000</option>
-            <option value="200000">200,000</option>
-            <option value="300000">300,000</option>
-            <option value="400000">400,000</option>
-            <option value="500000">500,000</option>
-            <option value="600000">600,000</option>
-            <option value="700000">700,000</option>
-            <option value="800000">800,000</option>
-            <option value="900000">900,000</option>
-            <option value="1000000">1,000,000</option>
-          </select>
-        </div>
-  
-        <!-- Maximum Price -->
-        <div class="col-md-3 mb-3">
-          <label for="maxPrice"></label>
-          <select class="form-control" id="maxPrice">
-            <option value="">Select Max Price</option>
-            <option value="100000">100,000</option>
-            <option value="200000">200,000</option>
-            <option value="300000">300,000</option>
-            <option value="400000">400,000</option>
-            <option value="500000">500,000</option>
-            <option value="600000">600,000</option>
-            <option value="700000">700,000</option>
-            <option value="800000">800,000</option>
-            <option value="900000">900,000</option>
-            <option value="1000000">1,000,000</option>
-            <option value="over1M">Over $1M</option>
-          </select>
-        </div>
-      </div>
-  
-      <div class="row">
+
         <!-- Minimum Sq. Ft -->
         <div class="col-md-3 mb-3">
-          <label for="minSqFt"></label>
-          <select class="form-control" id="minSqFt">
-            <option value="">Select Min Sq. Ft</option>
-            <option value="0">0</option>
-            <option value="500">500</option>
-            <option value="1000">1000</option>
-            <option value="1500">1500</option>
-            <option value="2000">2000</option>
-            <option value="2500">2500</option>
-            <option value="3000">3000</option>
-            <option value="3500">3500</option>
-            <option value="4000">4000</option>
-          </select>
+          <label for="minSqFt"><b>Min Sq. Ft</b></label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="min500SqFt" value="500" />
+            <label class="form-check-label" for="min500SqFt">500</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="min1000SqFt" value="1000" />
+            <label class="form-check-label" for="min1000SqFt">1000</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="min2000SqFt" value="2000" />
+            <label class="form-check-label" for="min2000SqFt">2000</label>
+          </div>
         </div>
-  
-        <!-- Maximum Sq. Ft -->
-        <div class="col-md-3 mb-3">
-          <label for="maxSqFt"></label>
-          <select class="form-control" id="maxSqFt">
-            <option value="">Select Max Sq. Ft</option>
-            <option value="1000">1000</option>
-            <option value="1500">1500</option>
-            <option value="2000">2000</option>
-            <option value="2500">2500</option>
-            <option value="3000">3000</option>
-            <option value="3500">3500</option>
-            <option value="4000">4000</option>
-            <option value="4500">4500</option>
-            <option value="5000">5000</option>
-            <option value="over5000">Over 5000</option>
-          </select>
-        </div>
-  
+
         <!-- Bedrooms -->
         <div class="col-md-3 mb-3">
-          <label for="bedrooms"></label>
-          <select class="form-control" id="bedrooms">
-            <option value="">Select Bedrooms</option>
-            <option value="1">1 Bedroom</option>
-            <option value="2">2 Bedrooms</option>
-            <option value="3">3 Bedrooms</option>
-            <option value="4">4 Bedrooms</option>
-            <option value="5">5 Bedrooms</option>
-            <option value="6">6+ Bedrooms</option>
-          </select>
+          <label for="bedrooms"><b>Bedrooms</b></label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="bed1" value="1" />
+            <label class="form-check-label" for="bed1">1 Bedroom</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="bed2" value="2" />
+            <label class="form-check-label" for="bed2">2 Bedrooms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="bed3" value="3" />
+            <label class="form-check-label" for="bed3">3 Bedrooms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="bed4" value="4" />
+            <label class="form-check-label" for="bed4">4 Bedrooms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="bed5" value="5" />
+            <label class="form-check-label" for="bed5">5 Bedrooms</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <button type="button" class="btn btn-primary mx-2" id="applyFilter">Apply Filter</button>
+          <button type="button" class="btn btn-secondary mx-2" id="clearFilter">Clear Filter</button>
         </div>
       </div>
     </section>
   </div>
-  
+<br>
+<br>
   <br />
   <section class="properties">
     <div class="container">
@@ -145,7 +129,7 @@
       <br />
       <br />
       <div class="row">
-        <!-- Container 1 -->
+        <!-- Property Containers -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
@@ -165,7 +149,6 @@
             </div>
           </div>
         </div>
-        <!-- Container 2 -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
@@ -185,7 +168,6 @@
             </div>
           </div>
         </div>
-        <!-- Container 3 -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
@@ -206,14 +188,31 @@
           </div>
         </div>
       </div>
-      <br />
-      <!-- More Property Containers -->
       <div class="row">
-        <!-- Container 4 -->
+        <!-- Property Containers -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
-              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid" />
+              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 1" class="img-fluid" />
+            </div>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 2" class="img-fluid" />
             </div>
             <div class="property-info">
               <h4>Highland Estates</h4>
@@ -229,31 +228,10 @@
             </div>
           </div>
         </div>
-        <!-- Container 5 -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
-              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid" />
-            </div>
-            <div class="property-info">
-              <h4>Highland Estates</h4>
-              <p>
-                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
-              </p>
-              <p>
-                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
-                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
-                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
-              </p>
-              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
-            </div>
-          </div>
-        </div>
-        <!-- Container 6 -->
-        <div class="col-md-4 mb-4">
-          <div class="property-card">
-            <div class="property-image">
-              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid" />
+              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 3" class="img-fluid" />
             </div>
             <div class="property-info">
               <h4>Highland Estates</h4>
@@ -270,13 +248,31 @@
           </div>
         </div>
       </div>
-      <br />
       <div class="row">
-        <!-- Container 4 -->
+        <!-- Property Containers -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
-              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 4" class="img-fluid" />
+              <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150765.jpg" alt="Property 1" class="img-fluid" />
+            </div>
+            <div class="property-info">
+              <h4>Highland Estates</h4>
+              <p>
+                <i class="fas fa-location-dot"></i> 123.St.Street, Munnar, Eklm
+              </p>
+              <p>
+                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
+                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
+                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
+              </p>
+              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 2" class="img-fluid" />
             </div>
             <div class="property-info">
               <h4>Highland Estates</h4>
@@ -292,31 +288,10 @@
             </div>
           </div>
         </div>
-        <!-- Container 5 -->
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
-              <img src="https://img.freepik.com/premium-photo/luxury-villa-exterior_636537-140719.jpg" alt="Property 5" class="img-fluid" />
-            </div>
-            <div class="property-info">
-              <h4>Highland Estates</h4>
-              <p>
-                <i class="fa-solid fa-location-dot"></i> 123.St.Street, Munnar, Eklm
-              </p>
-              <p>
-                <i class="fas fa-bed mr-2"></i><strong>4</strong> |
-                <i class="fas fa-bath mr-2"></i><strong>3</strong> |
-                <i class="fas fa-ruler-combined mr-2"></i> <strong>2500 sqft</strong>
-              </p>
-              <a href="{% url 'propertydetail' %}" class="btn">Know more</a>
-            </div>
-          </div>
-        </div>
-        <!-- Container 6 -->
-        <div class="col-md-4 mb-4">
-          <div class="property-card">
-            <div class="property-image">
-              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 6" class="img-fluid" />
+              <img src="https://propcheck.in/wp-content/uploads/2024/06/2151004031-1000x500.jpg" alt="Property 3" class="img-fluid" />
             </div>
             <div class="property-info">
               <h4>Highland Estates</h4>
@@ -333,80 +308,63 @@
           </div>
         </div>
       </div>
-      <!-- Pagination -->
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="">1</a></li>
-          <li class="page-item"><a class="page-link" href="">2</a></li>
-          <li class="page-item"><a class="page-link" href="">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Grab the filter checkboxes
+      const propertyTypeCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="singleFamilyHome"], input[type="checkbox"][id^="apartment"], input[type="checkbox"][id^="commercial"], input[type="checkbox"][id^="land"], input[type="checkbox"][id^="multiFamily"]');
+      const priceRangeCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="under200K"], input[type="checkbox"][id^="200Kto500K"], input[type="checkbox"][id^="500Kto1M"], input[type="checkbox"][id^="over1M"]');
+      const minSqFtCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="min"]');
+      const bedroomsCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="bed"]');
+
+      // Apply Filter Button Click Event
+      document.getElementById("applyFilter").addEventListener("click", function () {
+        // Collect selected filter values
+        const selectedPropertyTypes = Array.from(propertyTypeCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+        const selectedPriceRanges = Array.from(priceRangeCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+        const selectedMinSqFt = Array.from(minSqFtCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+        const selectedBedrooms = Array.from(bedroomsCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+
+        // Build query parameters
+        const params = new URLSearchParams();
+        if (selectedPropertyTypes.length) {
+          params.append("propertyType", selectedPropertyTypes);
+        }
+        if (selectedPriceRanges.length) {
+          params.append("priceRange", selectedPriceRanges);
+        }
+        if (selectedMinSqFt.length) {
+          params.append("minSqFt", selectedMinSqFt);
+        }
+        if (selectedBedrooms.length) {
+          params.append("bedrooms", selectedBedrooms);
+        }
+
+        // Redirect to the filtered properties URL
+        window.location.href = "{% url 'property' %}?" + params.toString();
+      });
+
+      // Clear Filter Button Click Event
+      document.getElementById("clearFilter").addEventListener("click", function () {
+        // Uncheck all checkboxes
+        propertyTypeCheckboxes.forEach(checkbox => checkbox.checked = false);
+        priceRangeCheckboxes.forEach(checkbox => checkbox.checked = false);
+        minSqFtCheckboxes.forEach(checkbox => checkbox.checked = false);
+        bedroomsCheckboxes.forEach(checkbox => checkbox.checked = false);
+
+        // Optionally, redirect to the base properties URL to refresh
+        window.location.href = "{% url 'property' %}";
+      });
+    });
+  </script>
 {% endblock %}
-
-<style>
-  .filter-section {
-    background-color: #f7f7f7;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 30px;
-  }
-
-  .filter-title {
-    flex-basis: 100%;
-    margin-bottom: 15px;
-  }
-
-  .filter-item {
-    flex: 1 1 20%; /* Adjust the width of the filter items */
-    min-width: 180px; /* Set a minimum width for the items */
-  }
-
-  .property-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-
-  .property-card:hover {
-    transform: scale(1.05);
-  }
-
-  .property-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .property-info {
-    padding: 15px;
-  }
-
-  .property-info h4 {
-    margin: 0 0 10px;
-  }
-
-  .btn {
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-    color: white;
-  }
-</style>

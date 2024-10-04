@@ -177,8 +177,8 @@
 
 @media (max-width: 360px) {
     .fixed-buttons {
-        bottom: 15px;
-        right: 15px;
+        bottom: 25px;
+        right: 30px;
     }
 
     .btn-whatsapp-pulse {
