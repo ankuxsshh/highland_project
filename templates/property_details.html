@@ -20,43 +20,20 @@
   <div class="container mt-5 pt-5 bg-light" style="border-radius: 20px;">
     <b><h3 class="text-center" style="font-size: 35px; font-family: 'Poppins', sans-serif; font-weight: 800;">Property details</h3></b>
     <br />
-    <div class="row d-flex align-items-stretch">
-      <!-- Property Image Section -->
-      <div class="col-md-4 d-flex">
-        <div class="card mb-4" style="border-radius: 30px; height: 330px;">
-          <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 330px;" />
-        </div>
-      </div>
 
-      <!-- Property Details Section -->
-      <div class="col-md-4 d-flex">
-        <div class="card mb-4 w-100" style="border-radius: 30px; height: 150px;">
-          <img src="https://www.mydomaine.com/thmb/3b9tEyy9erQDDxRN6bQEpYbyTLM=/2400x0/filters:no_upscale():strip_icc()/helfordln-1-7556f8609cb94144b0fca16114979ecb.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
-          <br />
-          <div class="d-none d-md-block"> <!-- Hide on small screens -->
-            <div class="card mb-4 w-100" style="border-radius: 30px; height: 150px;">
-              <img src="https://www.livehome3d.com/assets/img/articles/design-house/turn-to-a-design-agency.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
-            </div>
+    <div class="row">
+      {% for image in property.images.all %}
+        <div class="col-md-4 d-flex">
+          <div class="card mb-4" style="border-radius: 30px;">
+            <img src="{{ image.image.url }}" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 300px;" />
           </div>
         </div>
-      </div>
-
-      <!-- Property Description Section -->
-      <div class="col-md-4 d-flex">
-        <div class="card mb-4 w-100" style="border-radius: 30px; height: 150px;">
-          <img src="https://media.architecturaldigest.com/photos/571e97c5741fcddb16b559c9/4:3/w_4555,h_3416,c_limit/modernist-decor-inspiration-01.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
-          <br />
-          <div class="d-none d-md-block"> <!-- Hide on small screens -->
-            <div class="card mb-4 w-100" style="border-radius: 30px; height: 150px;">
-              <img src="https://5.imimg.com/data5/QM/KN/MY-4010282/bathroom-interior-designing-500x500.jpg" class="img-fluid" alt="Property Image" style="border-radius: 30px; height: 150px;" />
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
+
   </div>
-  <br>
-  <!-- Property Info and Features Section with 1st Row for Info & Features and 2nd Row for Description -->
+  <br />
+  <!-- Property Info and Features Section -->
   <div class="container">
     <div class="row justify-content-center mb-4">
       <!-- Property Info Card -->
@@ -68,32 +45,32 @@
             <div class="col-6">
               <ul class="list-unstyled">
                 <li class="d-flex align-items-center mb-3">
-                  <i class="fas fa-bed mr-2"></i> <strong>Bedrooms:</strong>
+                  <i class="fas fa-bed mr-2"></i> <strong>Bedrooms :</strong>
                 </li>
                 <li class="d-flex align-items-center mb-3">
-                  <i class="fas fa-bath mr-2"></i> <strong>Bathrooms:</strong>
+                  <i class="fas fa-location-dot mr-2"></i> <strong>Location :</strong>
                 </li>
                 <li class="d-flex align-items-center mb-3">
-                  <i class="fas fa-ruler-combined mr-2"></i> <strong>Area:</strong>
+                  <i class="fas fa-ruler-combined mr-2"></i> <strong>Area :</strong>
                 </li>
                 <li class="d-flex align-items-center mb-3">
-                  <i class="fas fa-dollar-sign mr-2"></i> <strong>Price:</strong>
+                  <i class="fas fa-dollar-sign mr-2"></i> <strong>Price :</strong>
                 </li>
               </ul>
             </div>
             <div class="col-6">
               <ul class="list-unstyled text-right">
                 <li class="mb-3">
-                  <strong>4</strong>
+                  <strong>{{ property.bedrooms }}</strong>
                 </li>
                 <li class="mb-3">
-                  <strong>3</strong>
+                  <strong>{{ property.location }}</strong>
                 </li>
                 <li class="mb-3">
-                  <strong>2500 sqft</strong>
+                  <strong>{{ property.sqft }}</strong>
                 </li>
                 <li class="mb-3">
-                  <strong>$500,000</strong>
+                  <strong>{{ property.price }}</strong>
                 </li>
               </ul>
             </div>
@@ -113,28 +90,28 @@
                   <i class="fas fa-wifi mr-2"></i>
                   <strong>Wi-Fi</strong>
                 </div>
-                <div class="col-6 text-right">Available</div>
+                <div class="col-6 text-right">{{ property.wifi|yesno:'Available,Not Available' }}</div>
               </div>
               <div class="row mb-3">
                 <div class="col-6 d-flex align-items-center">
                   <i class="fas fa-swimming-pool mr-2"></i>
                   <strong>Swimming Pool</strong>
                 </div>
-                <div class="col-6 text-right">Available</div>
+                <div class="col-6 text-right">{{ property.pool|yesno:'Available,Not Available' }}</div>
               </div>
               <div class="row mb-3">
                 <div class="col-6 d-flex align-items-center">
                   <i class="fas fa-car mr-2"></i>
                   <strong>Parking Spaces</strong>
                 </div>
-                <div class="col-6 text-right">2 spaces</div>
+                <div class="col-6 text-right">{{ property.parking|yesno:'Available,Not Available' }}</div>
               </div>
               <div class="row mb-3">
                 <div class="col-6 d-flex align-items-center">
                   <i class="fas fa-tree mr-2"></i>
                   <strong>Garden</strong>
                 </div>
-                <div class="col-6 text-right">Yes</div>
+                <div class="col-6 text-right">{{ property.garden|yesno:'Available,Not Available' }}</div>
               </div>
             </div>
           </div>
@@ -147,19 +124,19 @@
       <div class="col-12">
         <div class="card p-4 bg-light" style="border-radius: 20px;">
           <h4 class="text-center font-weight-bold">Description</h4>
-          <p class="text-justify">A stunning 4-bedroom home featuring modern design, spacious living areas, and a gourmet kitchen. Nestled in a quiet neighborhood with a large backyard, it's perfect for family living and entertaining.</p>
+          <p class="text-justify">{{ property.description }}</p>
           <div class="d-flex justify-content-end mt-4">
             <!-- WhatsApp Button -->
-            <a href="#" target="_blank" class="btn btn-success rounded-circle btn-icon-animation mx-2"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/+919846086211" class="btn btn-success rounded-circle btn-icon-animation mx-2"><i class="fab fa-whatsapp"></i></a>
             <!-- Call Button -->
-            <a href="#" class="btn btn-primary rounded-circle btn-icon-animation mx-2"><i class="fas fa-phone"></i></a>
+            <a href="tel:+919846086211" class="btn btn-primary rounded-circle btn-icon-animation mx-2"><i class="fas fa-phone"></i></a>
             <!-- Email Button -->
             <a href="#" class="btn btn-danger rounded-circle btn-icon-animation mx-2"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <br>
-    <br>
   </div>
+  <br />
+  <br />
 {% endblock %}

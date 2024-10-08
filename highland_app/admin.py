@@ -1,18 +1,27 @@
+# admin.py
 from django.contrib import admin
-from .models import Property
+from .models import Property, PropertyImage
+
+class PropertyImageInline(admin.TabularInline):
+    model = PropertyImage
+    extra = 1  # Allows for adding one extra image
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ('description', 'price', 'location', 'property_type')
-    search_fields = ('description', 'location')
-    list_filter = ('property_type', 'bedrooms')
+    list_display = ('name', 'price', 'location', 'property_type', 'bedrooms', 'sqft')
+    search_fields = ('name', 'location')
+    list_filter = ('property_type', 'bedrooms', 'price', 'sqft')
+    inlines = [PropertyImageInline]  # Enables image uploads in the property form
 
-    # Customize the form if needed
     fieldsets = (
         (None, {
-            'fields': ('description', 'image', 'location', 'property_type')
+            'fields': ('name', 'location', 'property_type')
         }),
-        ('Price Information', {
-            'fields': ('price', 'min_sqft', 'max_sqft', 'min_price', 'max_price', 'bedrooms')
+        ('Details', {
+            'fields': ('price', 'sqft', 'bedrooms', 'description', 'wifi', 'pool', 'parking', 'garden')
         }),
     )
+
+@admin.register(PropertyImage)
+class PropertyImageAdmin(admin.ModelAdmin):
+    list_display = ('property', 'image')
