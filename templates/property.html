@@ -21,121 +21,101 @@
   <section class="filter-section bg-light" style="padding: 30px;">
     <br />
     <div class="row mb-3">
-      <!-- Property Type -->
-      <div class="col-md-3 mb-3">
-        <label for="propertyType"><b>Property Type</b></label>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="propertyType" id="singleFamilyHome" value="singleFamilyHome" />
-          <label class="form-check-label" for="singleFamilyHome">Family Home</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="propertyType" id="apartment" value="apartment" />
-          <label class="form-check-label" for="apartment">Apartment</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="propertyType" id="commercial" value="commercial" />
-          <label class="form-check-label" for="commercial">Commercial</label>
-        </div>
-      </div>
+<!-- Property Type -->
+<div class="col-md-12 mb-3">
+  <div class="row">
+      <label for="property_type"><b>Property Type</b></label>
+      {% for type in property_types %}
+          <div class="col-md-3 mb-3">
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="property_type" id="{{ type }}" value="{{ type }}"
+                      {% if type in selected_property_type %}checked{% endif %}
+                  <label class="form-check-label" for="{{ type }}">{{ type }}</label>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
 
       <!-- Price Range -->
-      <div class="col-md-3 mb-3">
-        <label for="priceRange"><b>Price Range</b></label>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="priceRange" id="under200K" value="under200K" />
-          <label class="form-check-label" for="under200K">Under $200K</label>
+      <div class="col-md-12 mb-3">
+        <div class="row">
+            <label for="property_price"><b>Price Range</b></label>
+            {% for price in price_ranges %}
+            <div class="col-md-2 mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="property_price" id="{{ price }}" value="{{ price }}"
+                      {% if price in selected_price_range %}checked{% endif %} />
+                    <label class="form-check-label" for="{{ price }}">{{ price }}</label>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="priceRange" id="200Kto500K" value="200Kto500K" />
-          <label class="form-check-label" for="200Kto500K">$200K - $500K</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="priceRange" id="500Kto1M" value="500Kto1M" />
-          <label class="form-check-label" for="500Kto1M">$500K - $1M</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="priceRange" id="over1M" value="over1M" />
-          <label class="form-check-label" for="over1M">Over $1M</label>
-        </div>
-      </div>
+    </div>
 
-      <!-- Minimum Sq. Ft -->
-      <div class="col-md-3 mb-3">
-        <label for="minSqFt"><b>Min Sq. Ft</b></label>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="minSqFt" id="min500SqFt" value="500" />
-          <label class="form-check-label" for="min500SqFt">500</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="minSqFt" id="min1000SqFt" value="1000" />
-          <label class="form-check-label" for="min1000SqFt">1000</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="minSqFt" id="min2000SqFt" value="2000" />
-          <label class="form-check-label" for="min2000SqFt">2000</label>
+      <!-- Square Feet -->
+      <div class="col-md-12 mb-3">
+        <div class="row">
+          <label for="square_feet"><b>Square Feet</b></label>
+          {% for size in square_feet_options %}
+          <div class="col-md-2 mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="square_feet" id="{{ size }}" value="{{ size }}"
+                {% if size in selected_square_feet %}checked{% endif %} />
+              <label class="form-check-label" for="{{ size }}">{{ size }}</label>
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
 
       <!-- Bedrooms -->
-      <div class="col-md-3 mb-3">
-        <label for="bedrooms"><b>Bedrooms</b></label>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="bedrooms" id="bed1" value="1" />
-          <label class="form-check-label" for="bed1">1 Bedroom</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="bedrooms" id="bed2" value="2" />
-          <label class="form-check-label" for="bed2">2 Bedrooms</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="bedrooms" id="bed3" value="3" />
-          <label class="form-check-label" for="bed3">3 Bedrooms</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="bedrooms" id="bed4" value="4" />
-          <label class="form-check-label" for="bed4">4 Bedrooms</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="bedrooms" id="bed5" value="5" />
-          <label class="form-check-label" for="bed5">5 Bedrooms</label>
+      <div class="col-md-12 mb-3">
+        <div class="row">
+          <label for="bedrooms"><b>Bedrooms</b></label>
+          {% for i in bedroom_options %}
+          <div class="col-md-2 mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="bedrooms" id="bed{{ i }}" value="{{ i }}"
+                {% if i in selected_bedrooms %}checked{% endif %} />
+              <label class="form-check-label" for="bed{{ i }}">{{ i }}</label>
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
-
-    <!-- Filter Buttons -->
-    <div class="row">
-      <div class="col-12 text-center">
-        <button type="button" class="btn btn-primary mx-2" id="applyFilter">Apply Filter</button>
-        <button type="button" class="btn btn-secondary mx-2" id="clearFilter">Clear Filter</button>
-      </div>
+    <div class="text-end">
+      <button type="button" id="applyFilter" class="btn btn-primary">Apply Filters</button>
+      <button type="button" class="btn btn-secondary mx-4" id="clearFilter">Clear Filter</button>
     </div>
   </section>
 </div>
+
 <br>
 <section class="properties">
   <div class="container">
     <h1 class="text-center"><b>Latest Properties</b></h1>
-    <br><br>
+    <br />
+    <br />
     <div class="row">
       {% for property in properties %}
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="property-image">
-              {% if property.images.first %}
-                <img src="{{ property.images.first.image.url }}" alt="{{ property.name }}" class="img-fluid" />
-              {% else %}
-                <img src="{% static 'default-property.jpg' %}" alt="No image available" class="img-fluid" />
-              {% endif %}
+              <img src="{{ property.main_image.url }}" alt="{{ property.property_name }}" class="img-fluid" />
             </div>
             <div class="property-info">
-              <h4>{{ property.name }}</h4>
-              <p><i class="fas fa-location-dot"></i> {{ property.location }}</p>
+              <h4>{{ property.property_name }}</h4>
+              <p>
+                <i class="fas fa-location-dot"></i> {{ property.property_location }}
+              </p>
               <p>
                 <i class="fas fa-bed"></i> {{ property.bedrooms }} Bedrooms |
-                <i class="fas fa-ruler-combined"></i> {{ property.sqft }} sqft |
-                <i class="fas fa-dollar-sign"></i> {{ property.price }}
+                <i class="fas fa-ruler-combined"></i> {{ property.square_feet }} sq.ft |
+                <i class="">&#8377</i> {{ property.property_price }} 
               </p>
-              <a href="{% url 'property_details' property.id %}" class="btn btn-primary mt-2">Know More</a>
+              <a href="{% url 'property_details' property.id %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
@@ -150,27 +130,27 @@
 
 <script>
   document.getElementById('applyFilter').addEventListener('click', function () {
-    const propertyTypeCheckboxes = document.querySelectorAll('input[name="propertyType"]:checked');
-    const priceRangeCheckboxes = document.querySelectorAll('input[name="priceRange"]:checked');
-    const minSqFtCheckboxes = document.querySelectorAll('input[name="minSqFt"]:checked');
+    const propertyTypeCheckboxes = document.querySelectorAll('input[name="property_type"]:checked');
+    const priceRangeCheckboxes = document.querySelectorAll('input[name="property_price"]:checked');
+    const squareFeetCheckboxes = document.querySelectorAll('input[name="square_feet"]:checked');
     const bedroomsCheckboxes = document.querySelectorAll('input[name="bedrooms"]:checked');
 
     // Collect selected values
     const selectedPropertyTypes = Array.from(propertyTypeCheckboxes).map(checkbox => checkbox.value);
     const selectedPriceRanges = Array.from(priceRangeCheckboxes).map(checkbox => checkbox.value);
-    const selectedMinSqFt = Array.from(minSqFtCheckboxes).map(checkbox => checkbox.value);
+    const selectedSquareFeet = Array.from(squareFeetCheckboxes).map(checkbox => checkbox.value);
     const selectedBedrooms = Array.from(bedroomsCheckboxes).map(checkbox => checkbox.value);
 
     // Build query parameters
     const params = new URLSearchParams();
     if (selectedPropertyTypes.length) {
-      params.append('propertyType', selectedPropertyTypes.join(',')); // Joining values
+      params.append('property_type', selectedPropertyTypes.join(',')); // Joining values
     }
     if (selectedPriceRanges.length) {
-      params.append('priceRange', selectedPriceRanges.join(','));
+      params.append('property_price', selectedPriceRanges.join(','));
     }
-    if (selectedMinSqFt.length) {
-      params.append('minSqFt', selectedMinSqFt.join(','));
+    if (selectedSquareFeet.length) {
+      params.append('square_feet', selectedSquareFeet.join(','));
     }
     if (selectedBedrooms.length) {
       params.append('bedrooms', selectedBedrooms.join(','));
@@ -178,6 +158,11 @@
 
     // Redirect to the filtered properties URL
     window.location.href = "{% url 'property_list' %}?" + params.toString();
+  });
+
+  document.getElementById('clearFilter').addEventListener('click', function () {
+    // Clear all filters and redirect to property list without filters
+    window.location.href = "{% url 'property_list' %}";
   });
 </script>
 {% endblock %}

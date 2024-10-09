@@ -127,7 +127,7 @@
           </div>
           <br />
           <!-- Right Container (Paragraph) -->
-          <div class="col-md-6 bg-light">
+          <div class="col-md-6">
             <p class="text-justify">Highland Properties is your premier destination for finding the perfect real estate solution. Whether you’re seeking a cozy apartment or a luxurious estate, our website offers a diverse selection of properties tailored to meet your needs. With user-friendly navigation, detailed listings, and high-quality images, Highland Properties ensures a seamless browsing experience. Our expert team is dedicated to providing exceptional service and helping you navigate the real estate market with confidence.</p>
           </div>
         </div>
@@ -139,25 +139,26 @@
     <section class="properties">
       <div class="container">
         <b><h1 class="text-center">Latest Properties</h1></b>
-        <br>
-        <br>
+        <br />
+        <br />
         <div class="row">
           {% for property in properties %}
             <div class="col-md-4 mb-4">
               <div class="property-card">
                 <div class="property-image">
-                  <img src="{{ property.images.first.image.url }}" alt="{{ property.name }}" class="img-fluid" />
+                  <img src="{{ property.main_image.url }}" alt="{{ property.property_name }}" class="img-fluid" />
                 </div>
                 <div class="property-info">
-                  <h4>{{ property.name }}</h4>
-                  <p><i class="fas fa-location-dot"></i> {{ property.location }}</p>
+                  <h4>{{ property.property_name }}</h4>
+                  <p>
+                    <i class="fas fa-location-dot"></i> {{ property.property_location }}
+                  </p>
                   <p>
                     <i class="fas fa-bed"></i> {{ property.bedrooms }} Bedrooms |
-                    <i class="fas fa-ruler-combined"></i> {{ property.sqft }} sqft |
-                    <i class="fas fa-dollar-sign"></i> {{ property.price }}
+                    <i class="fas fa-ruler-combined"></i> {{ property.square_feet }} sq.ft |
+                    <i class=""></i> {{ property.property_price }} &#8377
                   </p>
                   <a href="{% url 'property_details' property.id %}" class="btn btn-primary">Know more</a>
-
                 </div>
               </div>
             </div>
@@ -167,7 +168,7 @@
         </div>
       </div>
     </section>
-    
+
     <br />
     <div class="container bank-slider">
       <h1 class="bank-slider-heading text-center" style="font-size: 35px; font-family: 'Poppins', sans-serif;"><b>Developers We Deal</b></h1>
