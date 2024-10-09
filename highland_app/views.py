@@ -37,36 +37,27 @@ def property_details(request, property_id):
         'additional_images': additional_images,  # Pass list of image URLs to the template
     })
 
-def search_properties(request):
-    search_query = request.GET.get('search', '')
-    properties = Property.objects.filter(property_location__icontains=search_query)
-
-    return render(request, 'property.html', {
-        'properties': properties,
-        'property_types': ['Villa', 'Apartment', 'Studio Flat'],
-        'price_ranges': ['Under 5L.', '5L. - 10L.', '10L. - 25L.', '25L. - 50L.', '50L. - 75L.', '75L. - 1Cr.', 'Above 1Cr.'],
-        'square_feet_options': ['Under 500 sq.ft', '500 - 1000 sq.ft', '1000 - 1500 sq.ft', '1500 - 2000 sq.ft', '2000 - 2500 sq.ft', '2500 - 3000 sq.ft'],
-        'bedroom_options': ['1', '2', '3', '4', '5', '5+'],
-        'selected_price_range': [],
-        'selected_square_feet': [],
-        'selected_bedrooms': [],
-    })
 
 def property_list(request):
     properties = Property.objects.all()  # Start with all properties
 
-    # Initialize selected filter values
-    selected_property_type = request.GET.getlist('property_type')  # Get selected property types
-    selected_price_range = request.GET.getlist('property_price')  # Get selected price ranges
-    selected_square_feet = request.GET.getlist('square_feet')  # Get selected square feet
-    selected_bedrooms = request.GET.getlist('bedrooms')  # Get selected bedrooms
+    # Get the search query for location from the search bar
+    location_query = request.GET.get('location', '')  # Capture location search query from GET request
 
-    # Apply filters if they exist
+    # Filter properties by location if a location query is provided
+    if location_query:
+        properties = properties.filter(property_location__icontains=location_query)
+
+    # Additional filters for property type, price, square feet, bedrooms (already in place)
+    selected_property_type = request.GET.getlist('property_type')
+    selected_price_range = request.GET.getlist('property_price')
+    selected_square_feet = request.GET.getlist('square_feet')
+    selected_bedrooms = request.GET.getlist('bedrooms')
+
     if selected_property_type:
         properties = properties.filter(property_type__in=selected_property_type)
 
     if selected_price_range:
-        # Define a mapping for price ranges
         price_mapping = {
             'Under 5L.': (0, 500000),
             '5L. - 10L.': (500000, 1000000),
@@ -96,12 +87,15 @@ def property_list(request):
     if selected_bedrooms:
         properties = properties.filter(bedrooms__in=selected_bedrooms)
 
+    # Render filtered properties in property.html template
     return render(request, 'property.html', {
-        'properties': properties,
+        'properties': properties,  # Pass filtered properties
         'property_types': ['Villa', 'Apartment', 'Studio Flat'],
         'price_ranges': ['Under 5L.', '5L. - 10L.', '10L. - 25L.', '25L. - 50L.', '50L. - 75L.', '75L. - 1Cr.', 'Above 1Cr.'],
         'square_feet_options': ['Under 500 sq.ft', '500 - 1000 sq.ft', '1000 - 1500 sq.ft', '1500 - 2000 sq.ft', '2000 - 2500 sq.ft', '2500 - 3000 sq.ft'],
         'bedroom_options': ['1', '2', '3', '4', '5', '5+'],
+        'selected_location': location_query,  # Pass selected location to the template to keep the search field filled
+        'selected_property_type': selected_property_type,
         'selected_price_range': selected_price_range,
         'selected_square_feet': selected_square_feet,
         'selected_bedrooms': selected_bedrooms,
