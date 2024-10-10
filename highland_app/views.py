@@ -84,8 +84,15 @@ def property_list(request):
         if filters:
             properties = properties.filter(reduce(or_, filters))
 
+    # Handle the bedrooms filter with the special case for "5+"
     if selected_bedrooms:
-        properties = properties.filter(bedrooms__in=selected_bedrooms)
+        bedroom_filters = Q()
+        for bedroom in selected_bedrooms:
+            if bedroom == '5+':
+                bedroom_filters |= Q(bedrooms__gte=5)  # Handle 5+ case
+            else:
+                bedroom_filters |= Q(bedrooms=bedroom)  # Exact match for other cases
+        properties = properties.filter(bedroom_filters)
 
     # Render filtered properties in property.html template
     return render(request, 'property.html', {

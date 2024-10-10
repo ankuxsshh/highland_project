@@ -18,73 +18,65 @@
 </section>
 
 <div class="container mt-5">
-  <section class="filter-section bg-light" style="padding: 30px;">
-    <br />
+  <section class="filter-section bg-light p-4">
     <div class="row mb-3">
-<!-- Property Type -->
-<div class="col-md-12 mb-3">
-  <div class="row">
-      <label for="property_type"><b>Property Type</b></label>
-      {% for type in property_types %}
-          <div class="col-md-3 mb-3">
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="property_type" id="{{ type }}" value="{{ type }}"
-                      {% if type in selected_property_type %}checked{% endif %}
-                  <label class="form-check-label" for="{{ type }}">{{ type }}</label>
-              </div>
-          </div>
-      {% endfor %}
-  </div>
-</div>
+      <!-- Property Type -->
+      <div class="col-md-12 mb-3">
+        <label for="property_type"><b>Property Type</b></label>
+        <div class="d-flex flex-wrap">
+          {% for type in property_types %}
+            <div class="form-check me-3" style="margin: 20px;">
+              <input class="form-check-input" type="checkbox" name="property_type" id="{{ type }}" value="{{ type }}"
+                {% if type in selected_property_type %}checked{% endif %}>
+              <label class="form-check-label" for="{{ type }}">{{ type }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
 
       <!-- Price Range -->
       <div class="col-md-12 mb-3">
-        <div class="row">
-            <label for="property_price"><b>Price Range</b></label>
-            {% for price in price_ranges %}
-            <div class="col-md-2 mb-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="property_price" id="{{ price }}" value="{{ price }}"
-                      {% if price in selected_price_range %}checked{% endif %} />
-                    <label class="form-check-label" for="{{ price }}">{{ price }}</label>
-                </div>
+        <label for="property_price"><b>Price Range</b></label>
+        <div class="d-flex flex-wrap">
+          {% for price in price_ranges %}
+            <div class="form-check me-3" style="margin: 20px;">
+              <input class="form-check-input" type="checkbox" name="property_price" id="{{ price }}" value="{{ price }}"
+                {% if price in selected_price_range %}checked{% endif %}>
+              <label class="form-check-label" for="{{ price }}">{{ price }}</label>
             </div>
-            {% endfor %}
+          {% endfor %}
         </div>
-    </div>
+      </div>
 
       <!-- Square Feet -->
       <div class="col-md-12 mb-3">
-        <div class="row">
-          <label for="square_feet"><b>Square Feet</b></label>
+        <label for="square_feet"><b>Square Feet</b></label>
+        <div class="d-flex flex-wrap">
           {% for size in square_feet_options %}
-          <div class="col-md-2 mb-3">
-            <div class="form-check">
+            <div class="form-check me-3" style="margin: 20px;">
               <input class="form-check-input" type="checkbox" name="square_feet" id="{{ size }}" value="{{ size }}"
-                {% if size in selected_square_feet %}checked{% endif %} />
+                {% if size in selected_square_feet %}checked{% endif %}>
               <label class="form-check-label" for="{{ size }}">{{ size }}</label>
             </div>
-          </div>
           {% endfor %}
         </div>
       </div>
 
       <!-- Bedrooms -->
       <div class="col-md-12 mb-3">
-        <div class="row">
-          <label for="bedrooms"><b>Bedrooms</b></label>
+        <label for="bedrooms"><b>Bedrooms</b></label>
+        <div class="d-flex flex-wrap">
           {% for i in bedroom_options %}
-          <div class="col-md-2 mb-3">
-            <div class="form-check">
+            <div class="form-check me-3" style="margin: 20px;">
               <input class="form-check-input" type="checkbox" name="bedrooms" id="bed{{ i }}" value="{{ i }}"
-                {% if i in selected_bedrooms %}checked{% endif %} />
+                {% if i in selected_bedrooms %}checked{% endif %}>
               <label class="form-check-label" for="bed{{ i }}">{{ i }}</label>
             </div>
-          </div>
           {% endfor %}
         </div>
       </div>
     </div>
+
     <div class="text-end">
       <button type="button" id="applyFilter" class="btn btn-primary">Apply Filters</button>
       <button type="button" class="btn btn-secondary mx-4" id="clearFilter">Clear Filter</button>
@@ -93,6 +85,7 @@
 </div>
 
 <br>
+
 <section class="properties">
   <div class="container">
     <h1 class="text-center"><b>Latest Properties</b></h1>
@@ -125,6 +118,7 @@
     </div>
   </div>
 </section>
+
 <br><br>
 </div>
 
@@ -165,4 +159,5 @@
     window.location.href = "{% url 'property_list' %}";
   });
 </script>
+
 {% endblock %}
