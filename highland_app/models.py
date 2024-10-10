@@ -9,7 +9,7 @@ class Property(models.Model):
         ('Apartment', 'Apartment'),
         ('Studio Flat', 'Studio Flat'),
     ])
-    property_price = models.DecimalField(max_digits=10, decimal_places=2)
+    property_price = models.TextField(default="")
     square_feet = models.IntegerField()
     bedrooms = models.IntegerField()
     property_description = models.TextField()
