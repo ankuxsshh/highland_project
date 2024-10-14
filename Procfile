@@ -1,0 +1,1 @@
+gunicorn highland_project.wsgi --log-file -

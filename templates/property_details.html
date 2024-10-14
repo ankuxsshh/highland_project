@@ -1,0 +1,156 @@
+<!-- property_details.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Property details
+{% endblock %}
+
+{% block content %}
+<section class="parallax-section">
+  <div class="parallax-background about-parallax">
+    <div class="container text-center text-white d-flex align-items-center justify-content-center">
+      <div class="intro-text">
+        <br />
+        <h1 class="display-4 font-weight-bold" style="font-size: 38px;">Property details</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container mt-5 pt-5" style="border-radius: 20px;">
+  <b><h3 class="text-center" style="font-size: 35px; font-family: 'Poppins', sans-serif; font-weight: 800;">{{ property.property_name }}</h3></b>
+  <br />
+
+  <div class="row">
+    <!-- First Column: Main Image -->
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card mb-4" style="border-radius: 30px; height: 350px;">
+        <img src="{{ property.main_image.url }}" class="img-fluid" alt="Main Property Image" style="border-radius: 30px; height: 350px; width: 100%;" />
+      </div>
+    </div>
+  
+    <!-- Second Column: Additional Images -->
+    <div class="col-md-6">
+      <div class="row">
+        {% for image_url in additional_images %}
+          <div class="col-6 d-flex">
+            <div class="card mb-4" style="border-radius: 20px; height: 163px;">
+              <img src="{{ image_url }}" class="img-fluid" alt="Property Image" style="border-radius: 20px; height: 163px; width: 100%;" />
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>  
+
+<br />
+
+<!-- Property Info and Features Section -->
+<div class="container">
+  <div class="row justify-content-center mb-4">
+    <!-- Property Info Card -->
+    <div class="col-12 col-md-6">
+      <div class="card info_card p-3 bg-light" style="border-radius: 20px;">
+        <h4 class="text-center font-weight-bold">Information</h4>
+        <br />
+        <div class="row">
+          <div class="col-6">
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-center mb-3">
+                <i class="fas fa-bed mr-2"></i>Bedrooms :
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <i class="fas fa-location-dot mr-2"></i> Location :
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <i class="fas fa-ruler-combined mr-2"></i> Area :
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <i class=""><b>&#8377</b> </i> Price :
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="list-unstyled text-right">
+              <li class="mb-3">
+                <strong>{{ property.bedrooms }}</strong>
+              </li>
+              <li class="mb-3">
+                <strong>{{ property.property_location }}</strong>
+              </li>
+              <li class="mb-3">
+                <strong>{{ property.square_feet }} sq.ft</strong>
+              </li>
+              <li class="mb-3">
+                <strong>{{ property.property_price }} &#8377</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Card -->
+    <div class="col-12 col-md-6">
+      <div class="card info_card p-3 bg-light" style="border-radius: 20px;">
+        <h4 class="text-center font-weight-bold">Features</h4>
+        <br />
+        <div class="row">
+          <div class="col-12">
+            <div class="row mb-3">
+              <div class="col-6 d-flex align-items-center">
+                <i class="fas fa-wifi mr-2"></i>
+                <strong>High-speed Wi-Fi</strong>
+              </div>
+              <div class="col-6 text-right">{{ property.wifi|yesno:'✓,✗' }}</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-6 d-flex align-items-center">
+                <i class="fas fa-swimming-pool mr-2"></i>
+                <strong>Swimming Pool</strong>
+              </div>
+              <div class="col-6 text-right">{{ property.swimming_pool|yesno:'✓,✗' }}</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-6 d-flex align-items-center">
+                <i class="fas fa-car mr-2"></i>
+                <strong>Car Parking Spaces</strong>
+              </div>
+              <div class="col-6 text-right">{{ property.car_parking|yesno:'✓,✗' }}</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-6 d-flex align-items-center">
+                <i class="fas fa-tree mr-2"></i>
+                <strong>Garden</strong>
+              </div>
+              <div class="col-6 text-right">{{ property.garden|yesno:'✓,✗' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Description Section -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card p-4 bg-light" style="border-radius: 20px;">
+        <h4 class="text-center font-weight-bold">Description</h4>
+        <p class="text-justify">{{ property.property_description }}</p>
+        <div class="d-flex justify-content-end mt-4">
+          <!-- WhatsApp Button -->
+          <a href="https://wa.me/+919846086211" class="btn btn-success rounded-circle btn-icon-animation mx-2"><i class="fab fa-whatsapp"></i></a>
+          <!-- Call Button -->
+          <a href="tel:+919846086211" class="btn btn-primary rounded-circle btn-icon-animation mx-2"><i class="fas fa-phone"></i></a>
+          <!-- Email Button -->
+          <a href="#" class="btn btn-danger rounded-circle btn-icon-animation mx-2"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+{% endblock %}

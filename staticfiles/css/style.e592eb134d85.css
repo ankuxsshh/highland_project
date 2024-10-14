@@ -1,0 +1,907 @@
+/* NAVBAR */
+
+.navbar {
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.navbar-nav {
+    text-align: center; /* Center align items in desktop view */
+}
+
+.nav-item {
+    margin: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 1000;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 1000;
+}
+
+.nav-link:hover {
+    color: #57545b;
+    text-decoration: none;
+}
+
+#logo {
+    transition: transform 0.3s;
+}
+
+/* Custom styles for dropdown */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%; /* Full width for mobile */
+        background-color: white;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        padding-top: 60px; /* Space for toggler button */
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+
+    .navbar-toggler {
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item {
+        margin: 20px 0; /* Spacing between items */
+        text-align: center; /* Center items in mobile view */
+    }
+
+    .nav-link {
+        padding: 10px 0; /* Adjust padding for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: flex !important; /* Ensure it remains visible */
+        justify-content: center; /* Center items in desktop view */
+    }
+}
+
+/* WHATSAPP, CALL FLOATING BUTTONS */
+
+.fixed-buttons {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2000;
+    column-gap: 10px;
+}
+
+.btn-whatsapp-pulse {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 50%;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    margin-bottom: 20px;
+}
+
+.btn-whatsapp-pulse i {
+    font-size: 1.2rem;
+}
+
+.whatsapp-button {
+    background: #25d366;
+}
+
+.whatsapp-button::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    border: 5px solid #25d366;
+    opacity: 0.75;
+    animation-name: pulse-border;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.call-button {
+    background: #1d6296;
+}
+
+.call-button::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    border: 5px solid #1d547f;
+    opacity: 0.75;
+    animation-name: pulse-border;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+
+    80% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes pulse-border {
+    0% {
+        padding: 20px;
+        opacity: 0.75;
+    }
+
+    75% {
+        padding: 40px;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer .container {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 360px) {
+    .fixed-buttons {
+        bottom: 25px;
+        right: 30px;
+    }
+
+    .btn-whatsapp-pulse {
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    .footer .container {
+        padding: 10px;
+    }
+}
+
+.image-container {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    /* Customize gradient here */
+    z-index: 1;
+    /* Ensure the gradient is above the image */
+    border-radius: 30px;
+    /* Match the border radius of the image */
+}
+
+.custom-image {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2;
+    /* Ensure the text is above the gradient */
+}
+
+.overlay-heading {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.overlay-text {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    /* Add a maximum width for desktop */
+    margin: 0 auto;
+    /* Center the search bar */
+}
+
+.search-bar input {
+    width: 100%;
+    border-radius: 30px 0 0 30px;
+    height: 50px;
+}
+
+.search-bar button {
+    border-radius: 0 30px 30px 0;
+    /* Rounded corners for button */
+    height: 50px;
+}
+
+@media (max-width: 360px) {
+    .search-bar {
+        width: 280px;
+        /* Set maximum width of search bar on mobile */
+        padding: 0 15px;
+        /* Optional padding for mobile */
+    }
+
+    .search-bar input {
+        width: 100%;
+        /* Full width of the input within the search bar */
+    }
+
+    .search-bar button {
+        width: auto;
+        /* Allow button to maintain its size */
+        border-radius: 0 30px 30px 0;
+        /* Ensure button retains its rounded corners */
+    }
+}
+
+.image-card {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    max-width: 480px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    border-radius: 20px;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.image-card:hover::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.text-overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 2;
+    width: 100%;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.image-card:hover .text-overlay {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 360px) {
+    .image-card {
+        height: 200px;
+    }
+
+    .text-overlay-image {
+        font-size: 1rem;
+        padding: 10px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .overlay-heading {
+        font-size: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .overlay-text {
+        font-size: 0.875rem;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+
+.what-we-do {
+    padding: 60px 0;
+}
+
+.what-we-do h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    transition: transform 0.3s;
+}
+
+.card-container:hover {
+    transform: scale(1.05);
+}
+
+.card-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    transition: opacity 0.3s;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    border-radius: 30px;
+    transition: background 0.3s;
+}
+
+.card-container:hover .card-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+.card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-text h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 360px) {
+    .what-we-do {
+        padding: 30px 0;
+    }
+
+    .what-we-do h3 {
+        font-size: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card-text h4 {
+        font-size: 1.2rem;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.featured {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    /* Optional: Add padding to the featured section */
+}
+
+.featured h5 {
+    font-size: 35px;
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.featured p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 360px) {
+    .featured h5 {
+        font-size: 1.25rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .featured p {
+        font-size: 0.9rem;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.bank-slider {
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+
+.bank-slider-wrapper {
+    display: flex;
+    width: calc(200%);
+    /* Adjusted for two sets of slides */
+    animation: slide 30s infinite linear;
+    /* Adjust the speed of the animation */
+}
+
+.bank-slide {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    /* Removed padding to eliminate gaps */
+}
+
+.bank-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    /* Margin adjusted to 20px */
+}
+
+.bank-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 360px) {
+    .bank-container {
+        height: 100px;
+        /* Adjusted height for mobile */
+        border-radius: 30px;
+        margin: 10px;
+    }
+}
+/* Property Card Styles */
+.property-card {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container */
+.property-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Property Info Section */
+.property-info {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.property-info h4 {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #555;
+}
+
+.property-info p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.property-info .btn {
+    margin-top: 6px;
+    font-size: 16px;
+    background-color: #000d38;
+    color: white;
+    border: 1px solid #000d38;
+    border-radius: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.property-info .btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/* Property Icons */
+.property-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.property-icons .fas {
+    font-size: 14px;
+    color: #4d4c4c;
+    text-align: center;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 360px) {
+    .property-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .property-image {
+        height: 150px;
+    }
+
+    .property-info h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .property-info p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .property-info .btn {
+        font-size: 14px;
+        padding: 10px 10px;
+        text-align: center;
+        border-radius: 18px;
+    }
+    .property-info {
+        text-align: center;
+    }
+}
+
+.parallax-background {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+.intro-text {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color: white;
+}
+
+.scroll-down {
+    animation: bounce 2s infinite;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.scroll-down:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card {
+    transition: transform 0.3s;
+    border-radius: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* New font styles */
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.card-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+
+/* Custom CSS for text justification */
+.text-justify {
+    text-align: justify;
+    margin: 0 auto;
+    /* Center-aligns the text block */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Card Styling */
+.card-overlay {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-img-wrapper:hover .card-img-top {
+    transform: scale(1.2);
+}
+
+.card-overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-overlay-text h5 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+.card-img-wrapper:hover .card-overlay-text {
+    opacity: 1;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 360px) {
+    .parallax-background {
+        background-attachment: scroll;
+    }
+
+    .intro-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-img-wrapper {
+        height: 200px;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card {
+    border-radius: 30px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+/* Ensure that the card height is the same */
+.row.d-flex .col-md-4 .card {
+    height: 100%;
+    border-radius: 30px;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+/* Adjust spacing for smaller screens */
+@media (max-width: 360px) {
+    .btn {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+.contact-form-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 360px) {
+    .card {
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 30px;
+    }
+  }
+
+/* Common styles for buttons */
+.btn-icon-animation {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.btn-icon-animation:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* WhatsApp Button specific hover effect */
+.btn-success:hover {
+    background-color: #25d366;
+    border-color: #25d366;
+}
+
+/* Call Button specific hover effect */
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Email Button specific hover effect */
+.btn-danger:hover {
+    background-color: #dc3545;
+    border-color: #c82333;
+}

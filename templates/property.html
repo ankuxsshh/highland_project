@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Properties
+{% endblock %}
+
+{% block content %}
+<section class="parallax-section">
+  <div class="parallax-background properties-parallax">
+    <div class="container text-center text-white d-flex align-items-center justify-content-center min-vh-100">
+      <div class="intro-text">
+        <h1 class="display-4 font-weight-bold" style="font-size: 38px;">Properties</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container mt-5">
+  <section class="filter-section bg-light p-4">
+    <div class="row mb-3">
+      <!-- Property Type -->
+      <div class="col-md-12 mb-3">
+        <label for="property_type"><b>Property Type</b></label>
+        <div class="d-flex flex-wrap">
+          {% for type in property_types %}
+            <div class="form-check me-3" style="margin: 20px;">
+              <input class="form-check-input" type="checkbox" name="property_type" id="{{ type }}" value="{{ type }}"
+                {% if type in selected_property_type %}checked{% endif %}>
+              <label class="form-check-label" for="{{ type }}">{{ type }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="col-md-12 mb-3">
+        <label for="property_price"><b>Price Range</b></label>
+        <div class="d-flex flex-wrap">
+          {% for price in price_ranges %}
+            <div class="form-check me-3" style="margin: 20px;">
+              <input class="form-check-input" type="checkbox" name="property_price" id="{{ price }}" value="{{ price }}"
+                {% if price in selected_price_range %}checked{% endif %}>
+              <label class="form-check-label" for="{{ price }}">{{ price }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Square Feet -->
+      <div class="col-md-12 mb-3">
+        <label for="square_feet"><b>Square Feet</b></label>
+        <div class="d-flex flex-wrap">
+          {% for size in square_feet_options %}
+            <div class="form-check me-3" style="margin: 20px;">
+              <input class="form-check-input" type="checkbox" name="square_feet" id="{{ size }}" value="{{ size }}"
+                {% if size in selected_square_feet %}checked{% endif %}>
+              <label class="form-check-label" for="{{ size }}">{{ size }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Bedrooms -->
+      <div class="col-md-12 mb-3">
+        <label for="bedrooms"><b>Bedrooms</b></label>
+        <div class="d-flex flex-wrap">
+          {% for i in bedroom_options %}
+            <div class="form-check me-3" style="margin: 20px;">
+              <input class="form-check-input" type="checkbox" name="bedrooms" id="bed{{ i }}" value="{{ i }}"
+                {% if i in selected_bedrooms %}checked{% endif %}>
+              <label class="form-check-label" for="bed{{ i }}">{{ i }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="text-end">
+      <button type="button" id="applyFilter" class="btn btn-primary">Filter now</button>
+      <button type="button" class="btn btn-secondary" id="clearFilter">Clear</button>
+    </div>
+  </section>
+</div>
+
+<br>
+
+<section class="properties">
+  <div class="container">
+    <h1 class="text-center"><b>Latest Properties</b></h1>
+    <br />
+    <br />
+    <div class="row">
+      {% for property in properties %}
+        <div class="col-md-4 mb-4">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="{{ property.main_image.url }}" alt="{{ property.property_name }}" class="img-fluid" />
+            </div>
+            <div class="property-info">
+              <h4>{{ property.property_name }}</h4>
+              <p><b>
+                <i class="fas fa-location-dot"></i> {{ property.property_location }}
+              </b></p>
+              <p>
+                <i class="fas fa-bed"> </i> {{ property.bedrooms }} Bedrooms |
+                <i class="fas fa-expand-arrows-alt"> </i> {{ property.square_feet }} sq.ft |
+                <i class="fa-solid fa-indian-rupee-sign"> </i> {{ property.property_price }} 
+              </p>
+              <a href="{% url 'property_details' property.id %}" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-center">No properties found in this location.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<br><br>
+</div>
+
+<script>
+  document.getElementById('applyFilter').addEventListener('click', function () {
+    const propertyTypeCheckboxes = document.querySelectorAll('input[name="property_type"]:checked');
+    const priceRangeCheckboxes = document.querySelectorAll('input[name="property_price"]:checked');
+    const squareFeetCheckboxes = document.querySelectorAll('input[name="square_feet"]:checked');
+    const bedroomsCheckboxes = document.querySelectorAll('input[name="bedrooms"]:checked');
+
+    // Collect selected values
+    const selectedPropertyTypes = Array.from(propertyTypeCheckboxes).map(checkbox => checkbox.value);
+    const selectedPriceRanges = Array.from(priceRangeCheckboxes).map(checkbox => checkbox.value);
+    const selectedSquareFeet = Array.from(squareFeetCheckboxes).map(checkbox => checkbox.value);
+    const selectedBedrooms = Array.from(bedroomsCheckboxes).map(checkbox => checkbox.value);
+
+    // Build query parameters
+    const params = new URLSearchParams();
+    if (selectedPropertyTypes.length) {
+      params.append('property_type', selectedPropertyTypes.join(',')); // Joining values
+    }
+    if (selectedPriceRanges.length) {
+      params.append('property_price', selectedPriceRanges.join(','));
+    }
+    if (selectedSquareFeet.length) {
+      params.append('square_feet', selectedSquareFeet.join(','));
+    }
+    if (selectedBedrooms.length) {
+      params.append('bedrooms', selectedBedrooms.join(','));
+    }
+
+    // Redirect to the filtered properties URL
+    window.location.href = "{% url 'property_list' %}?" + params.toString();
+  });
+
+  document.getElementById('clearFilter').addEventListener('click', function () {
+    // Clear all filters and redirect to property list without filters
+    window.location.href = "{% url 'property_list' %}";
+  });
+</script>
+
+{% endblock %}

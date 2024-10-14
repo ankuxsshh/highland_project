@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Highland Properties
+{% endblock %}
+
+{% block content %}
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="container">
+    <div class="image-container text-center">
+      <img src="https://savemax.in/blogs/wp-content/uploads/2024/05/how-to-get-a-home-loan-at-lowest-possible-rate.jpg" alt="Highland Properties" class="img-fluid custom-image" style="height: 450px" />
+      <div class="text-overlay">
+        <h1 class="overlay-heading"><b>Discover Your Perfect</b></h1>
+        <h1 class="overlay-heading"><b>Property</b></h1>
+        <p class="overlay-text">Real estate properties for sale and rent in our country</p>
+        <form method="GET" action="{% url 'property_list' %}" class="row g-3 mb-4">
+          <div class="search-bar input-group">
+            <input type="text" name="location" class="form-control" placeholder="Search for properties by location..." aria-label="Search" />
+            <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </form>        
+      </div>
+
+    </div>
+    <br />
+    <!-- New Section for Three Image Containers -->
+    <div class="row text-center">
+      <div class="col-md-4 col-sm-12 mb-4">
+        <div class="image-card">
+          <img src="https://png.pngtree.com/thumb_back/fw800/background/20230720/pngtree-blueprints-meet-3d-a-stunning-rendering-of-a-residential-architecture-model-image_3713056.jpg" alt="Image 1" class="img-fluid" />
+          <div class="text-overlay-image">
+            <h2 class="overlay-heading"><b>10K +</b></h2>
+            <p class="overlay-text">Happy Customers</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 mb-4">
+        <div class="image-card">
+          <img src="https://westoba.com/wp-content/uploads/2021/05/breno-assis-r3WAWU5Fi5Q-unsplash-scaled.jpg" alt="Image 2" class="img-fluid" />
+          <div class="text-overlay-image">
+            <h2 class="overlay-heading"><b>12K +</b></h2>
+            <p class="overlay-text">Elegant Properties</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 mb-4">
+        <div class="image-card">
+          <img src="https://img.freepik.com/premium-photo/real-estate-insight-role-skilled-agent-generative-ai_94628-11513.jpg" alt="Image 3" class="img-fluid" />
+          <div class="text-overlay-image">
+            <h2 class="overlay-heading"><b>8+</b></h2>
+            <p class="overlay-text">Years Of Services</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <section class="about-us">
+      <h3 class="text-center mb-4" style="font-size: 35px;"><b>About Us</b></h3>
+      <br />
+      <div class="container d-flex justify-content-center">
+        <div class="row align-items-stretch">
+          <div class="col-md-6 d-flex flex-column justify-content-center p-2">
+            <p class="about-text" style="font-size: 1rem; text-align: justify;">Highland Properties is a 25-year-old real estate firm headquartered in Kerala. Our goal is to provide our customers with the highest quality commercial real estate services available, while maintaining a focus on customer service and satisfaction. We aim to be your go-to source for all of your commercial real estate needs. Whether you're looking for offices or warehouses, Highland will find the perfect space for your company's needs. We offer our clients a wide variety of options in each category, but if nothing suits your needs we'll work with you to develop an innovative solution that meets your specifications. We believe in providing honest advice and top-quality service so that our clients can make informed decisions about their investments and grow their businesses without fear of being left behind by the competition. At Highland Properties, we understand that commercial real estate is not just about buying and selling property. It's also about finding the right tenants for your property, and having a team of professionals who can deliver on your vision for the space.</p>
+          </div>
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="https://thearchitectsdiary.com/wp-content/uploads/2020/06/Property-.jpg" alt="About Us" class="img-fluid about-image" style="height: 100%; max-height: 320px; border-radius: 20px; width: 490px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+      <div class="container">
+        <h3 class="text-center mb-4" style="font-size: 35px;"><b>What We Do</b></h3>
+        <br />
+        <div class="row">
+          <!-- Card 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="card-container">
+              <div class="card-overlay"></div>
+              <img src="https://static.vecteezy.com/system/resources/thumbnails/008/572/449/small/real-estate-agent-holding-house-key-to-his-client-after-signing-contract-concept-for-real-estate-moving-home-or-renting-property-free-photo.jpg" alt="Service 1" class="img-fluid" />
+              <div class="card-text">
+                <h4><b>Property Management</b></h4>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card-container">
+              <div class="card-overlay"></div>
+              <img src="https://t4.ftcdn.net/jpg/04/73/72/11/360_F_473721132_I9LNMCvx7Du6EdJNH91EywcNHzgtEclz.jpg" alt="Service 2" class="img-fluid" />
+              <div class="card-text">
+                <h4><b>Negotiation and Offers</b></h4>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card-container">
+              <div class="card-overlay"></div>
+              <img src="https://media.istockphoto.com/id/1160009459/photo/partner-up-and-pursue-your-goals-together.jpg?s=612x612&w=0&k=20&c=gN2B_ZyNQo7BpeqX-yBxWJKr8RO5NAbz6DHViTSrsZo=" alt="Service 3" class="img-fluid" />
+              <div class="card-text">
+                <h4><b>Marketing and Advertising</b></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured py-5">
+      <div class="container">
+        <h6>Featured</h6>
+        <div class="row align-items-center">
+          <!-- Left Container (Heading) -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h5><b>Real Estate</b></h5>
+            <h5><b>Recommendation Of The</b></h5>
+            <h5><b>Day</b></h5>
+          </div>
+          <br />
+          <!-- Right Container (Paragraph) -->
+          <div class="col-md-6">
+            <p class="text-justify">Highland Properties is your premier destination for finding the perfect real estate solution. Whether you’re seeking a cozy apartment or a luxurious estate, our website offers a diverse selection of properties tailored to meet your needs. With user-friendly navigation, detailed listings, and high-quality images, Highland Properties ensures a seamless browsing experience. Our expert team is dedicated to providing exceptional service and helping you navigate the real estate market with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br />
+
+    <section class="properties">
+      <div class="container">
+        <b><h1 class="text-center">Latest Properties</h1></b>
+        <br />
+        <br />
+        <div class="row">
+          {% for property in properties %}
+            <div class="col-md-4 mb-4">
+              <div class="property-card">
+                <div class="property-image">
+                  <img src="{{ property.main_image.url }}" alt="{{ property.property_name }}" class="img-fluid" />
+                </div>
+                <div class="property-info">
+                  <h4>{{ property.property_name }}</h4>
+                  <p><b>
+                    <i class="fas fa-location-dot"></i> {{ property.property_location }}
+                  </b></p>
+                  <p>
+                    <i class="fas fa-bed"></i> {{ property.bedrooms }} Bedrooms |
+                    <i class="fas fa-expand-arrows-alt"></i> {{ property.square_feet }} sq.ft |
+                    <i class="fa-solid fa-indian-rupee-sign"></i> {{ property.property_price }}
+                  </p>
+                  <a href="{% url 'property_details' property.id %}" class="btn btn-primary">Know more</a>
+                </div>
+              </div>
+            </div>
+          {% empty %}
+            <p class="text-center">No properties found in this location.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <br />
+    <div class="container bank-slider">
+      <h1 class="bank-slider-heading text-center" style="font-size: 35px; font-family: 'Poppins', sans-serif;"><b>Developers We Deal</b></h1>
+      <br />
+      <p class="about-text text-justify">At Highland Properties, we collaborate with some of Kerala’s most reputable and trusted real estate developers to offer premium commercial and residential spaces. Our network includes developers renowned for their quality, innovation, and commitment to sustainability. From luxury apartments and villas to state-of-the-art office spaces and industrial warehouses, we ensure that every project meets the highest standards in construction and design.
+
+        Our partnerships with these developers allow us to offer properties in prime locations across Kerala, including major cities like Kochi, Trivandrum, and Calicut, as well as emerging commercial hubs. We work closely with developers who share our vision of delivering properties that not only meet current market demands but also anticipate future growth. Whether it's contemporary office buildings or environmentally friendly residential communities, our developers integrate cutting-edge technologies and sustainable practices to create spaces that are both functional and aesthetically pleasing.
+
+        By dealing with Highland Properties, you gain access to a broad range of real estate options, from affordable office spaces to premium business hubs, ensuring that your investment yields both short-term and long-term benefits. Trust us to connect you with the best developers who can help bring your real estate vision to life.</p>
+      <br />
+      <div class="bank-slider-wrapper">
+        <div class="bank-slide">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.sknvibes.com/news/gfxz/image/Confident%20Group%20logo%202.jpg" alt="Bank Image 1" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/Layton.jpg" alt="Bank Image 2" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/Perfection.jpg" alt="Bank Image 3" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bank-slide">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/CAT.jpg" alt="Bank Image 4" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.logogenie.net/images/articles/best-construction-logos9.jpg" alt="Bank Image 5" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://businessempiremedia.com/wp-content/uploads/2024/07/larsen-toubro-vector-logo.png" alt="Bank Image 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat the slides for infinite sliding effect -->
+        <div class="bank-slide">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.sknvibes.com/news/gfxz/image/Confident%20Group%20logo%202.jpg" alt="Bank Image 1" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/Layton.jpg" alt="Bank Image 2" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/Perfection.jpg" alt="Bank Image 3" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bank-slide">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.tailorbrands.com/wp-content/uploads/2020/10/CAT.jpg" alt="Bank Image 4" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://www.logogenie.net/images/articles/best-construction-logos9.jpg" alt="Bank Image 5" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bank-container">
+                <img src="https://businessempiremedia.com/wp-content/uploads/2024/07/larsen-toubro-vector-logo.png" alt="Bank Image 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <style>
+    .about-us .row {
+      height: 100%;
+    }
+    
+    .about-us .about-text {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+    
+    @media (min-width: 768px) {
+      .about-us .about-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  About Us
+{% endblock %}
+
+{% block content %}
+  <section class="parallax-section">
+    <div class="parallax-background about-parallax">
+      <div class="container text-center text-white d-flex align-items-center justify-content-center">
+        <div class="intro-text">
+          <br />
+          <h1 class="display-4 font-weight-bold" style="font-size: 38px;">About Us</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-content" class="py-5">
+    <div class="container text-center">
+      <h1><b>About Us</b></h1>
+      <br />
+      <div class="row align-items-stretch">
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center" style="height: 100%;">
+          <p class="text-justify" style="margin: 0;">Highland Properties is a 25-year-old real estate firm headquartered in Kerala. Our goal is to provide our customers with the highest quality commercial real estate services available, while maintaining a focus on customer service and satisfaction. We aim to be your go-to source for all of your commercial real estate needs. Whether you're looking for offices or warehouses, Highland will find the perfect space for your company's needs. We offer our clients a wide variety of options in each category, but if nothing suits your needs we'll work with you to develop an innovative solution that meets your specifications. We believe in providing honest advice and top-quality service so that our clients can make informed decisions about their investments and grow their businesses without fear of being left behind by the competition. At Highland Properties, we understand that commercial real estate is not just about buying and selling property. It's also about finding the right tenants for your property and having a team of professionals who can deliver on your vision for the space.</p>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <img src="https://wallpapers.com/images/hd/real-estate-miniature-house-model-zcovmnik4h0l5s7k.jpg" alt="About Us" class="img-fluid" style="object-fit: cover; border-radius: 20px; height: 100%; width: 100%;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leadership py-5">
+    <div class="container">
+      <h3 class="text-center mb-4" style="font-size: 38px;"><b>Management Committee</b></h3>
+      <div class="row justify-content-center g-4"> <!-- Added g-4 for gap -->
+        <!-- Card 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="leadership_card">
+            <img src="{% static 'images/Jabbar.jpeg' %}" alt="SM Abdul Jabbar" class="card-img-top" />
+            <div class="card-body text-center">
+              <h5 class="card-title">SM Abdul Jabbar</h5>
+              <p class="card-title">Managing Director</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="leadership_card">
+            <img src="{% static 'images/Navas.jpeg' %}" alt="V. Navas" class="card-img-top" />
+            <div class="card-body text-center">
+              <h5 class="card-title">V. Navas</h5>
+              <p class="card-title">Business Manager</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="leadership_card">
+            <img src="{% static 'images/Najeeb.jpeg' %}" alt="Muhammed Juvain Najeeb" class="card-img-top" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Muhammed Juvain Najeeb</h5>
+              <p class="card-title">Finance Manager</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="leadership_card">
+            <img src="{% static 'images/Thejus.jpeg' %}" alt="Thejus M" class="card-img-top" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Thejus M</h5>
+              <p class="card-title">Marketing Manager</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="leadership_card">
+            <img src="{% static 'images/Jaleel.jpeg' %}" alt="Abdul Jaleel CP" class="card-img-top" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Abdul Jaleel CP</h5>
+              <p class="card-title">Chief Operating Officer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>   
+
+  <style>
+    .leadership_card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%; /* Allow cards to expand evenly */
+      width: 180px;
+    }
+    
+    .leadership_card img {
+      height: 160px; /* Maintain a reasonable height */
+      object-fit: cover; /* Ensure proper cropping */
+    }
+    
+    @media (max-width: 576px) {
+      .leadership_card {
+        min-width: 160px; /* Ensure cards maintain width on small screens */
+      }
+    }
+    
+    @media (min-width: 576px) and (max-width: 768px) {
+      .leadership_card img {
+        height: 200px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .leadership_card img {
+        height: 200px;
+      }
+    }
+    
+    /* Ensures that both text and image containers have equal height */
+    #about-content .row {
+      display: flex;
+      height: 100%;
+    }
+    
+    #about-content .col-md-6 {
+      height: auto; /* Allows the column to stretch to match the tallest column */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /* Ensures the text fits well within its container */
+    #about-content .text-justify {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    /* Equal height for image and text content */
+    #about-content img {
+      height: 100%; /* Makes the image container match the height of the text */
+      width: 100%; /* Ensure the image covers the available width */
+      object-fit: cover; /* Ensures the image scales and covers its container */
+      border-radius: 20px;
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 576px) {
+      #about-content .row {
+        flex-direction: column; /* Stack columns vertically on mobile */
+      }
+    
+      #about-content .col-md-6 {
+        max-width: 100%;
+        height: auto; /* Resets height to auto for smaller screens */
+        padding-bottom: 20px;
+      }
+    
+      #about-content h1 {
+        font-size: 24px; /* Smaller heading size for mobile */
+      }
+    
+      #about-content .text-justify {
+        font-size: 14px; /* Adjust font size for readability on mobile */
+      }
+    
+      #about-content img {
+        height: auto; /* Ensures the image maintains aspect ratio on mobile */
+        object-fit: cover;
+        width: 100%; /* Ensures full width on mobile */
+        border-radius: 10px;
+      }
+    }
+    .card-title {
+      font-size: 15px;
+    }
+  </style>
+{% endblock %}
