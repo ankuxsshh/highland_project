@@ -9,10 +9,10 @@ class Property(models.Model):
         ('Apartment', 'Apartment'),
         ('Studio Flat', 'Studio Flat'),
     ])
-    property_price = models.TextField(default="")
-    square_feet = models.IntegerField()
-    bedrooms = models.IntegerField()
-    property_description = models.TextField()
+    property_price = models.IntegerField(default="") 
+    square_feet = models.IntegerField(default="")
+    bedrooms = models.IntegerField(default="")
+    property_description = models.TextField(default="")
 
     # Features
     wifi = models.BooleanField(default=False)
@@ -21,11 +21,11 @@ class Property(models.Model):
     garden = models.BooleanField(default=False)
 
     # Images
-    main_image = models.ImageField(upload_to='property_images/', blank=True, null=True)  # Main image
-    additional_images1 = models.ImageField(upload_to='property_images/', blank=True, null=True)  
-    additional_images2 = models.ImageField(upload_to='property_images/', blank=True, null=True)  
-    additional_images3 = models.ImageField(upload_to='property_images/', blank=True, null=True)  
-    additional_images4 = models.ImageField(upload_to='property_images/', blank=True, null=True)  
+    main_image = models.ImageField(upload_to='property_images/', blank=True, null=True)
+    additional_images1 = models.ImageField(upload_to='property_images/', blank=True, null=True)
+    additional_images2 = models.ImageField(upload_to='property_images/', blank=True, null=True)
+    additional_images3 = models.ImageField(upload_to='property_images/', blank=True, null=True)
+    additional_images4 = models.ImageField(upload_to='property_images/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.property_name} - {self.property_location} - ${self.property_price}"

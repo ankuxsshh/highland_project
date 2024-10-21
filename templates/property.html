@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}
@@ -7,157 +6,297 @@
 {% endblock %}
 
 {% block content %}
-<section class="parallax-section">
-  <div class="parallax-background properties-parallax">
-    <div class="container text-center text-white d-flex align-items-center justify-content-center min-vh-100">
-      <div class="intro-text">
-        <h1 class="display-4 font-weight-bold" style="font-size: 38px;">Properties</h1>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="parallax-section">
+    <div class="parallax-background properties-parallax" style="height: 400px;">
+      <div class="container text-center text-white d-flex align-items-center justify-content-center min-vh-100">
+        <div class="intro-text">
+          <br /><br />
+          <br />
+          <h1 class="display-4 font-weight-bold" style="font-size: 38px;">PROPERTIES</h1>
+          <p style="font-size: 15px;">Discover Your Perfect Property</p>
+          <form method="GET" action="{% url 'property_list' %}" class="row g-3 mb-4">
+            <div class="search-bar input-group">
+              <!-- Filter Button -->
+              <button id="openFilter" class="btn btn-primary border-0" type="button"><i class="fa-solid fa-bars"></i></button>
 
-<div class="container mt-5">
-  <section class="filter-section bg-light p-4">
-    <div class="row mb-3">
-      <!-- Property Type -->
-      <div class="col-md-12 mb-3">
-        <label for="property_type"><b>Property Type</b></label>
-        <div class="d-flex flex-wrap">
-          {% for type in property_types %}
-            <div class="form-check me-3" style="margin: 20px;">
-              <input class="form-check-input" type="checkbox" name="property_type" id="{{ type }}" value="{{ type }}"
-                {% if type in selected_property_type %}checked{% endif %}>
-              <label class="form-check-label" for="{{ type }}">{{ type }}</label>
+              <!-- Search Input with retained value -->
+              <input type="text" name="location" class="form-control" placeholder="Search for properties by location..." aria-label="Search" value="{{ location_query }}" />
+
+              <!-- Search Button -->
+              <button class="btn btn-primary border-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-          {% endfor %}
+          </form>
         </div>
       </div>
-
-      <!-- Price Range -->
-      <div class="col-md-12 mb-3">
-        <label for="property_price"><b>Price Range</b></label>
-        <div class="d-flex flex-wrap">
-          {% for price in price_ranges %}
-            <div class="form-check me-3" style="margin: 20px;">
-              <input class="form-check-input" type="checkbox" name="property_price" id="{{ price }}" value="{{ price }}"
-                {% if price in selected_price_range %}checked{% endif %}>
-              <label class="form-check-label" for="{{ price }}">{{ price }}</label>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- Square Feet -->
-      <div class="col-md-12 mb-3">
-        <label for="square_feet"><b>Square Feet</b></label>
-        <div class="d-flex flex-wrap">
-          {% for size in square_feet_options %}
-            <div class="form-check me-3" style="margin: 20px;">
-              <input class="form-check-input" type="checkbox" name="square_feet" id="{{ size }}" value="{{ size }}"
-                {% if size in selected_square_feet %}checked{% endif %}>
-              <label class="form-check-label" for="{{ size }}">{{ size }}</label>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- Bedrooms -->
-      <div class="col-md-12 mb-3">
-        <label for="bedrooms"><b>Bedrooms</b></label>
-        <div class="d-flex flex-wrap">
-          {% for i in bedroom_options %}
-            <div class="form-check me-3" style="margin: 20px;">
-              <input class="form-check-input" type="checkbox" name="bedrooms" id="bed{{ i }}" value="{{ i }}"
-                {% if i in selected_bedrooms %}checked{% endif %}>
-              <label class="form-check-label" for="bed{{ i }}">{{ i }}</label>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <div class="text-end">
-      <button type="button" id="applyFilter" class="btn btn-primary">Filter now</button>
-      <button type="button" class="btn btn-secondary" id="clearFilter">Clear</button>
     </div>
   </section>
-</div>
 
-<br>
+<!-- Filter Panel Overlay -->
+<div id="filterOverlay" class="filter-overlay">
+  <div class="filter-card">
+    <div class="filter-content p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 style="font-family: 'Poppins', sans-serif;">FILTER PROPERTIES</h4>
+        <button id="closeFilter" class="btn btn-close">
+          <i class="fa-regular fa-circle-xmark" style="font-size: 25px;"></i>
+        </button>
+      </div>
 
-<section class="properties">
-  <div class="container">
-    <h1 class="text-center"><b>Latest Properties</b></h1>
-    <br />
-    <br />
-    <div class="row">
-      {% for property in properties %}
-        <div class="col-md-4 mb-4">
-          <div class="property-card">
-            <div class="property-image">
-              <img src="{{ property.main_image.url }}" alt="{{ property.property_name }}" class="img-fluid" />
-            </div>
-            <div class="property-info">
-              <h4>{{ property.property_name }}</h4>
-              <p><b>
-                <i class="fas fa-location-dot"></i> {{ property.property_location }}
-              </b></p>
-              <p>
-                <i class="fas fa-bed"> </i> {{ property.bedrooms }} Bedrooms |
-                <i class="fas fa-expand-arrows-alt"> </i> {{ property.square_feet }} sq.ft |
-                <i class="fa-solid fa-indian-rupee-sign"> </i> {{ property.property_price }} 
-              </p>
-              <a href="{% url 'property_details' property.id %}" class="btn btn-primary">Know more</a>
-            </div>
+      <div class="filter-section" style="max-height: 400px; overflow-y: auto;">
+        <!-- Property Type Checkboxes -->
+        <div class="mb-4">
+          <label><b style="font-family: 'Poppins', sans-serif;">Property Type</b></label>
+          <div class="d-flex flex-wrap">
+            <label class="me-3">
+              <input type="checkbox" name="property_type" value="Villa" />
+              Villa
+            </label>
+            <label class="me-3">
+              <input type="checkbox" name="property_type" value="Apartment" />
+              Apartment
+            </label>
+            <label class="me-3">
+              <input type="checkbox" name="property_type" value="Studio Flat" />
+              Studio Flat
+            </label>
           </div>
         </div>
-      {% empty %}
-        <p class="text-center">No properties found in this location.</p>
-      {% endfor %}
+
+        <!-- Price Range Dropdown -->
+        <div class="mb-4">
+          <label><b style="font-family: 'Poppins', sans-serif;">Price Range</b></label>
+          <div class="d-flex">
+            <select name="min_price" class="form-select me-2 custom-dropdown">
+              <option value="">Min Price</option>
+              <option value="1000000">10 Lakhs</option>
+              <option value="2000000">20 Lakhs</option>
+              <option value="3000000">30 Lakhs</option>
+              <option value="4000000">40 Lakhs</option>
+              <option value="5000000">50 Lakhs</option>
+              <option value="6000000">60 Lakhs</option>
+              <option value="7000000">70 Lakhs</option>
+              <option value="8000000">80 Lakhs</option>
+              <option value="9000000">90 Lakhs</option>
+              <option value="10000001">1 Crore +</option>
+            </select>
+
+            <select name="max_price" class="form-select custom-dropdown">
+              <option value="">Max Price</option>
+              <option value="1000000">10 Lakhs</option>
+              <option value="2000000">20 Lakhs</option>
+              <option value="3000000">30 Lakhs</option>
+              <option value="4000000">40 Lakhs</option>
+              <option value="5000000">50 Lakhs</option>
+              <option value="6000000">60 Lakhs</option>
+              <option value="7000000">70 Lakhs</option>
+              <option value="8000000">80 Lakhs</option>
+              <option value="9000000">90 Lakhs</option>
+              <option value="10000001">1 Crore +</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Square Feet Dropdown -->
+        <div class="mb-4">
+          <label><b style="font-family: 'Poppins', sans-serif;">Square Feet</b></label>
+          <div class="d-flex">
+            <select name="min_sqft" class="form-select me-2 custom-dropdown">
+              <option value="">Min Sq. Ft.</option>
+              <option value="500">500</option>
+              <option value="1000">1000</option>
+              <option value="1500">1500</option>
+              <option value="2000">2000</option>
+              <option value="2500">2500</option>
+              <option value="3000">3000</option>
+            </select>
+            <select name="max_sqft" class="form-select custom-dropdown">
+              <option value="">Max Sq. Ft.</option>
+              <option value="500">500</option>
+              <option value="1000">1000</option>
+              <option value="1500">1500</option>
+              <option value="2000">2000</option>
+              <option value="2500">2500</option>
+              <option value="3000">3000</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Bedrooms Checkboxes -->
+        <div class="mb-4">
+          <label><b style="font-family: 'Poppins', sans-serif;">Bedrooms</b></label>
+          <div class="d-flex flex-wrap">
+            <label class="me-3">
+              <input type="checkbox" name="bedrooms" value="1" />
+              1
+            </label>
+            <label class="me-3">
+              <input type="checkbox" name="bedrooms" value="2" />
+              2
+            </label>
+            <label class="me-3">
+              <input type="checkbox" name="bedrooms" value="3" />
+              3
+            </label>
+            <label class="me-3">
+              <input type="checkbox" name="bedrooms" value="4" />
+              4
+            </label>
+            <label class="me-3">
+              <input type="checkbox" name="bedrooms" value="5" />
+              5+
+            </label>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- Action Buttons -->
+      <div class="text-end">
+        <button id="applyFilter" class="btn btn-primary">Filter now</button>
+        <button id="clearFilter" class="btn btn-secondary">Clear</button>
+      </div>
     </div>
   </div>
-</section>
-
-<br><br>
 </div>
 
-<script>
-  document.getElementById('applyFilter').addEventListener('click', function () {
-    const propertyTypeCheckboxes = document.querySelectorAll('input[name="property_type"]:checked');
-    const priceRangeCheckboxes = document.querySelectorAll('input[name="property_price"]:checked');
-    const squareFeetCheckboxes = document.querySelectorAll('input[name="square_feet"]:checked');
-    const bedroomsCheckboxes = document.querySelectorAll('input[name="bedrooms"]:checked');
+  <section class="properties">
+    <div class="container mt-5">
+      <h1 class="text-center"><b>Latest Properties</b></h1>
+      <div class="row mt-4">
+        {% for property in properties %}
+          <div class="col-md-4 mb-4">
+            <div class="property-card" style="height: 400px; border-radius: 50px 0px 50px 0px;">
+              <img src="{{ property.main_image.url }}" alt="{{ property.property_name }}" class="img-fluid" style="border-radius: 40px 0px 40px 0px; height: 200px; width: 400px;" />
+              <div class="property-info">
+                <h4 style="font-family: 'Poppins', sans-serif;">{{ property.property_name }}</h4>
+                <p>
+                  <b><i class="fas fa-location-dot"></i> {{ property.property_location }}</b>
+                </p>
+                <p>
+                  <i class="fas fa-bed"></i> {{ property.bedrooms }} Bedrooms |
+                  <i class="fa-solid fa-table-cells-large"></i> {{ property.square_feet }} sq.ft |
+                  <i class="fa-solid fa-indian-rupee-sign"></i> {{ property.property_price }}
+                </p>
+                <a href="{% url 'property_details' property.id %}" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        {% empty %}
+          <p class="text-center">No properties found.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
-    // Collect selected values
-    const selectedPropertyTypes = Array.from(propertyTypeCheckboxes).map(checkbox => checkbox.value);
-    const selectedPriceRanges = Array.from(priceRangeCheckboxes).map(checkbox => checkbox.value);
-    const selectedSquareFeet = Array.from(squareFeetCheckboxes).map(checkbox => checkbox.value);
-    const selectedBedrooms = Array.from(bedroomsCheckboxes).map(checkbox => checkbox.value);
-
-    // Build query parameters
-    const params = new URLSearchParams();
-    if (selectedPropertyTypes.length) {
-      params.append('property_type', selectedPropertyTypes.join(',')); // Joining values
+  <style>
+    .filter-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1050;
+      transition: opacity 0.4s ease-in-out;
     }
-    if (selectedPriceRanges.length) {
-      params.append('property_price', selectedPriceRanges.join(','));
+    
+    .filter-overlay.active {
+      display: flex;
+      opacity: 1;
     }
-    if (selectedSquareFeet.length) {
-      params.append('square_feet', selectedSquareFeet.join(','));
+    
+    .filter-card {
+      background: white;
+      padding: 20px;
+      border-radius: 50px 0px 50px 0px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(0.8);
+      transition: transform 0.4s ease-in-out;
     }
-    if (selectedBedrooms.length) {
-      params.append('bedrooms', selectedBedrooms.join(','));
+    
+    .filter-overlay.active .filter-card {
+      transform: scale(1);
+    }
+    
+    /* Scrollable filter section */
+    .filter-section {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .custom-dropdown {
+      border-radius: 30px 0px 30px 0px; /* Rounded corners */
+      height: 50px;
+      width: 120px;
+      margin: 20px;
+      border: 1px solid #ced4da; /* Adjust border color as needed */
+    }
+    
+    .filter-overlay {
+      background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+    }
+    
+    .filter-card {
+      background-color: white; /* Card background */
+      border-radius: 15px; /* Rounded corners for card */
     }
 
-    // Redirect to the filtered properties URL
-    window.location.href = "{% url 'property_list' %}?" + params.toString();
-  });
+    input[type="checkbox"] {
+      margin-right: 5px; /* Space between checkbox and label */
+    }
 
-  document.getElementById('clearFilter').addEventListener('click', function () {
-    // Clear all filters and redirect to property list without filters
-    window.location.href = "{% url 'property_list' %}";
-  });
-</script>
+    label {
+      display: flex;
+      align-items: center; /* Center items vertically */
+      font-family: 'Poppins', sans-serif; /* Font styling */
+      margin: 10px;
+    }
+  </style>
 
+  <script>
+    const filterOverlay = document.getElementById('filterOverlay')
+    const openFilterButton = document.getElementById('openFilter')
+    const closeFilterButton = document.getElementById('closeFilter')
+    
+    openFilterButton.addEventListener('click', () => {
+      filterOverlay.classList.add('active') // Show overlay with animation
+    })
+    
+    closeFilterButton.addEventListener('click', () => {
+      filterOverlay.classList.remove('active') // Hide overlay with animation
+    })
+    
+    document.getElementById('applyFilter').addEventListener('click', function () {
+      const params = new URLSearchParams()
+    
+      // Append selected options for price and square feet
+      params.append('min_price', document.querySelector('select[name="min_price"]').value)
+      params.append('max_price', document.querySelector('select[name="max_price"]').value)
+      params.append('min_sqft', document.querySelector('select[name="min_sqft"]').value)
+      params.append('max_sqft', document.querySelector('select[name="max_sqft"]').value)
+    
+      // Append selected property type checkboxes
+      document.querySelectorAll('input[name="property_type"]:checked').forEach((input) => {
+        params.append('property_type', input.value)
+      })
+    
+      // Append selected bedrooms checkboxes
+      document.querySelectorAll('input[name="bedrooms"]:checked').forEach((input) => {
+        params.append('bedrooms', input.value)
+      })
+    
+      window.location.href = "{% url 'property_list' %}?" + params.toString()
+    })
+    
+    document.getElementById('clearFilter').addEventListener('click', () => {
+      window.location.href = "{% url 'property_list' %}"
+    })
+  </script>
 {% endblock %}

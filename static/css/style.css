@@ -10,7 +10,7 @@
 }
 
 .nav-item {
-    margin: 15px;
+    margin-right: 45px;
     font-family: 'Poppins', sans-serif;
     font-weight: 1000;
     text-align: center;
@@ -197,7 +197,7 @@
 
 .image-container {
     position: relative;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     overflow: hidden;
     margin-bottom: 2px;
 }
@@ -213,14 +213,14 @@
     /* Customize gradient here */
     z-index: 1;
     /* Ensure the gradient is above the image */
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     /* Match the border radius of the image */
 }
 
 .custom-image {
     width: 100%;
     height: auto;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
 }
 
 .text-overlay {
@@ -237,7 +237,7 @@
 }
 
 .overlay-heading {
-    font-size: 2.5rem;
+    font-size: 45px;
     margin: 0;
 }
 
@@ -250,42 +250,42 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    max-width: 800px;
-    /* Add a maximum width for desktop */
-    margin: 0 auto;
-    /* Center the search bar */
+    width: 550px;
+    margin: 0 auto; /* Center the search bar */
 }
 
 .search-bar input {
-    width: 100%;
-    border-radius: 30px 0 0 30px;
-    height: 50px;
+    height: 60px;
+    border-radius: 0; /* Ensure flat edges between buttons and input */
 }
 
 .search-bar button {
-    border-radius: 0 30px 30px 0;
-    /* Rounded corners for button */
-    height: 50px;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    background-color: rgb(87, 108, 230)
+}
+
+.search-bar .btn-primary:first-child {
+    border-radius: 30px 0 0 0 ; /* Rounded left corner for filter button */
+}
+
+.search-bar .btn-primary:last-child {
+    border-radius: 0 0 30px 0; /* Rounded right corner for search button */
 }
 
 @media (max-width: 360px) {
     .search-bar {
-        width: 280px;
-        /* Set maximum width of search bar on mobile */
+        width: 300px;
         padding: 0 15px;
-        /* Optional padding for mobile */
     }
-
+    
     .search-bar input {
-        width: 100%;
-        /* Full width of the input within the search bar */
-    }
-
-    .search-bar button {
-        width: auto;
-        /* Allow button to maintain its size */
-        border-radius: 0 30px 30px 0;
-        /* Ensure button retains its rounded corners */
+        width: 100%; /* Ensure full width on mobile */
     }
 }
 
@@ -295,7 +295,7 @@
     width: 100%;
     max-width: 480px;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 50px 0px 50px 0px;
     margin: auto;
     transition: transform 0.3s ease;
 }
@@ -312,7 +312,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    border-radius: 20px;
+    border-radius: 50px 0px 50px 0px;
     z-index: 1;
     transition: background 0.3s ease;
 }
@@ -325,7 +325,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 50px 0px 50px 0px;
     transition: opacity 0.3s ease;
     position: relative;
     z-index: 0;
@@ -341,7 +341,7 @@
     padding: 10px;
     z-index: 2;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 50px 0px 50px 0px;
     transition: background-color 0.3s ease;
     font-family: 'Poppins', sans-serif;
 }
@@ -386,7 +386,7 @@
 .card-container {
     position: relative;
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     transition: transform 0.3s;
 }
 
@@ -397,7 +397,7 @@
 .card-container img {
     width: 100%;
     height: auto;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     transition: opacity 0.3s;
 }
 
@@ -408,7 +408,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     transition: background 0.3s;
 }
 
@@ -452,7 +452,7 @@
 
 .featured {
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 50px 0px 50px 0px;
     padding: 20px;
     /* Optional: Add padding to the featured section */
 }
@@ -506,7 +506,7 @@
     position: relative;
     overflow: hidden;
     border: 1px solid #ddd;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -535,7 +535,7 @@
     .bank-container {
         height: 100px;
         /* Adjusted height for mobile */
-        border-radius: 30px;
+        border-radius: 50px 0px 50px 0px;
         margin: 10px;
     }
 }
@@ -544,7 +544,7 @@
     width: 100%;
     height: auto;
     border: 1px solid #ddd;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     overflow: hidden;
     background-color: #fff;
     display: flex;
@@ -573,7 +573,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 50px 0px 50px 0px;
 }
 
 /* Property Info Section */
@@ -602,7 +602,7 @@
     background-color: #000d38;
     color: white;
     border: 1px solid #000d38;
-    border-radius: 18px;
+    border-radius: 20px 0px 20px 0px;
     padding: 10px 15px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -651,7 +651,7 @@
         font-size: 14px;
         padding: 10px 10px;
         text-align: center;
-        border-radius: 18px;
+        border-radius: 30px 0px 30px 0px;
     }
     .property-info {
         text-align: center;
@@ -666,7 +666,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
     margin: 20px;
 }
 
@@ -684,7 +684,7 @@
     background-color: rgba(255, 255, 255, 0.3);
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px 0px 50px 0px;
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -708,7 +708,7 @@
 
 .card {
     transition: transform 0.3s;
-    border-radius: 20px;
+    border-radius: 50px 0px 50px 0px;
 }
 
 .card:hover {
@@ -744,7 +744,7 @@
 /* Card Styling */
 .card-overlay {
     position: relative;
-    border-radius: 15px;
+    border-radius: 50px 0px 50px 0px;
     overflow: hidden;
     transition: transform 0.3s ease;
 }
@@ -820,26 +820,26 @@
 }
 
 .card {
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
 }
 
 /* Ensure that the card height is the same */
 .row.d-flex .col-md-4 .card {
     height: 100%;
-    border-radius: 30px;
+    border-radius: 50px 0px 50px 0px;
 }
 
 .btn {
     font-size: 16px;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 30px 0px 30px 0px;
     padding: 10px 20px;
 }
 
@@ -865,7 +865,7 @@
     iframe {
       width: 100%;
       height: 300px;
-      border-radius: 30px;
+      border-radius: 50px 0px 50px 0px;
     }
   }
 
@@ -897,11 +897,12 @@
 /* Call Button specific hover effect */
 .btn-primary:hover {
     background-color: #0056b3;
-    border-color: #004085;
+    border-color:  #0056b3;
 }
 
 /* Email Button specific hover effect */
 .btn-danger:hover {
     background-color: #dc3545;
-    border-color: #c82333;
+    border-color:  #dc3545;
 }
+

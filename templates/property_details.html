@@ -13,21 +13,21 @@
     <div class="container text-center text-white d-flex align-items-center justify-content-center">
       <div class="intro-text">
         <br />
-        <h1 class="display-4 font-weight-bold" style="font-size: 38px;">Property details</h1>
+        <h1 class="display-4 font-weight-bold" style="font-size: 38px;">Property Details</h1>
       </div>
     </div>
   </div>
 </section>
 
-<div class="container mt-5 pt-5" style="border-radius: 20px;">
+<div class="container mt-5 pt-5" style="border-radius:  50px 0px 50px 0px;">
   <b><h3 class="text-center" style="font-size: 35px; font-family: 'Poppins', sans-serif; font-weight: 800;">{{ property.property_name }}</h3></b>
   <br />
 
   <div class="row">
     <!-- First Column: Main Image -->
     <div class="col-md-6 d-flex justify-content-center">
-      <div class="card mb-4" style="border-radius: 30px; height: 350px;">
-        <img src="{{ property.main_image.url }}" class="img-fluid" alt="Main Property Image" style="border-radius: 30px; height: 350px; width: 100%;" />
+      <div class="card mb-4" style="border-radius: 50px 0px 50px 0px; height: 350px;">
+        <img src="{{ property.main_image.url }}" class="img-fluid" alt="Main Property Image" style="border-radius:  50px 0px 50px 0px; height: 350px; width: 100%;" />
       </div>
     </div>
   
@@ -36,8 +36,8 @@
       <div class="row">
         {% for image_url in additional_images %}
           <div class="col-6 d-flex">
-            <div class="card mb-4" style="border-radius: 20px; height: 163px;">
-              <img src="{{ image_url }}" class="img-fluid" alt="Property Image" style="border-radius: 20px; height: 163px; width: 100%;" />
+            <div class="card mb-4" style="border-radius: 50px 0px 50px 0px; height: 163px;">
+              <img src="{{ image_url }}" class="img-fluid" alt="Property Image" style="border-radius: 50px 0px 50px 0px; height: 163px; width: 100%;" />
             </div>
           </div>
         {% endfor %}
@@ -52,23 +52,23 @@
   <div class="row justify-content-center mb-4">
     <!-- Property Info Card -->
     <div class="col-12 col-md-6">
-      <div class="card info_card p-3 bg-light" style="border-radius: 20px;">
+      <div class="card info_card p-3 bg-light" style="border-radius: 50px 0px 50px 0px;">
         <h4 class="text-center font-weight-bold">Information</h4>
         <br />
         <div class="row">
           <div class="col-6">
             <ul class="list-unstyled">
               <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-bed mr-2"></i>Bedrooms :
+                <strong><i class="fas fa-bed mr-2"></i>Bedrooms </strong>
               </li>
               <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-location-dot mr-2"></i> Location :
+                <strong><i class="fas fa-location-dot mr-2"></i> Location </strong>
               </li>
               <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-ruler-combined mr-2"></i> Area :
+                <strong><i class="fa-solid fa-table-cells-large mr-2"></i> Area </strong>
               </li>
               <li class="d-flex align-items-center mb-3">
-                <i class=""><b>&#8377</b> </i> Price :
+                <strong><i class=""><b>&#8377</b> </i> Price </strong>
               </li>
             </ul>
           </div>
@@ -94,7 +94,7 @@
 
     <!-- Features Card -->
     <div class="col-12 col-md-6">
-      <div class="card info_card p-3 bg-light" style="border-radius: 20px;">
+      <div class="card info_card p-3 bg-light" style="border-radius: 50px 0px 50px 0px;">
         <h4 class="text-center font-weight-bold">Features</h4>
         <br />
         <div class="row">
@@ -104,28 +104,28 @@
                 <i class="fas fa-wifi mr-2"></i>
                 <strong>High-speed Wi-Fi</strong>
               </div>
-              <div class="col-6 text-right">{{ property.wifi|yesno:'✓,✗' }}</div>
+              <div class="col-6 text-right">{{ property.wifi|yesno:'✅,❎' }}</div>
             </div>
             <div class="row mb-3">
               <div class="col-6 d-flex align-items-center">
                 <i class="fas fa-swimming-pool mr-2"></i>
                 <strong>Swimming Pool</strong>
               </div>
-              <div class="col-6 text-right">{{ property.swimming_pool|yesno:'✓,✗' }}</div>
+              <div class="col-6 text-right">{{ property.swimming_pool|yesno:'✅,❎' }}</div>
             </div>
             <div class="row mb-3">
               <div class="col-6 d-flex align-items-center">
                 <i class="fas fa-car mr-2"></i>
                 <strong>Car Parking Spaces</strong>
               </div>
-              <div class="col-6 text-right">{{ property.car_parking|yesno:'✓,✗' }}</div>
+              <div class="col-6 text-right">{{ property.car_parking|yesno:'✅,❎' }}</div>
             </div>
             <div class="row mb-3">
               <div class="col-6 d-flex align-items-center">
                 <i class="fas fa-tree mr-2"></i>
                 <strong>Garden</strong>
               </div>
-              <div class="col-6 text-right">{{ property.garden|yesno:'✓,✗' }}</div>
+              <div class="col-6 text-right">{{ property.garden|yesno:'✅,❎' }}</div>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@
   <!-- Property Description Section -->
   <div class="row">
     <div class="col-12">
-      <div class="card p-4 bg-light" style="border-radius: 20px;">
+      <div class="card p-4 bg-light" style="border-radius: 50px 0px 50px 0px;">
         <h4 class="text-center font-weight-bold">Description</h4>
         <p class="text-justify">{{ property.property_description }}</p>
         <div class="d-flex justify-content-end mt-4">
