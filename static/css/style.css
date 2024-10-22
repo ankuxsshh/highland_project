@@ -280,12 +280,12 @@
 
 @media (max-width: 360px) {
     .search-bar {
-        width: 340px;
+        width: 300px;
         padding: 0 15px;
     }
     
     .search-bar input {
-        width: 100%; /* Ensure full width on mobile */
+        width: 80%; /* Ensure full width on mobile */
     }
 }
 
