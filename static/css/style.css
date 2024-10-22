@@ -250,7 +250,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    width: 550px;
+    width: 450px;
     margin: 0 auto; /* Center the search bar */
 }
 
@@ -280,7 +280,7 @@
 
 @media (max-width: 360px) {
     .search-bar {
-        width: 300px;
+        width: 340px;
         padding: 0 15px;
     }
     

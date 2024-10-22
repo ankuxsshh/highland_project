@@ -34,9 +34,9 @@ def property_details(request, property_id):
     })
 
 def property_list(request):
-    properties = Property.objects.all()
+    properties = Property.objects.all()  # Fetch all properties initially
 
-    # Filtering
+    # Retrieve query parameters from GET request
     location_query = request.GET.get('location', '').strip()
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
@@ -49,31 +49,42 @@ def property_list(request):
     if location_query:
         properties = properties.filter(property_location__icontains=location_query)
 
+    # Filter by minimum and maximum price
     if min_price:
-        if int(min_price) == 10000001:  # Special case for "1 Crore+"
+        if int(min_price) == 10000001:  # Handle "1 Crore+" case
             properties = properties.filter(property_price__gt=10000000)
         else:
-            properties = properties.filter(property_price__gte=min_price)
+            properties = properties.filter(property_price__gte=int(min_price))
 
-    if max_price and int(max_price) != 10000001:  
-        properties = properties.filter(property_price__lte=max_price)
-    
+    if max_price and int(max_price) != 10000001:
+        properties = properties.filter(property_price__lte=int(max_price))
+
+    # Filter by square feet
     if min_sqft:
-        properties = properties.filter(square_feet__gte=min_sqft)
+        properties = properties.filter(square_feet__gte=int(min_sqft))
     if max_sqft:
-        properties = properties.filter(square_feet__lte=max_sqft)
+        properties = properties.filter(square_feet__lte=int(max_sqft))
+
+    # Filter by property type if selected
     if property_type:
         properties = properties.filter(property_type__in=property_type)
+
+    # Filter by bedrooms (including "5+")
     if bedrooms:
         bedrooms = [int(bedroom) for bedroom in bedrooms]
+        if 5 in bedrooms:
+            properties = properties.filter(bedrooms__gte=5)
+        else:
+            properties = properties.filter(bedrooms__in=bedrooms)
 
-    # Filter properties
-    if 5 in bedrooms:  # If "5+" is selected
-        properties = properties.filter(bedrooms__gte=5)  # Get properties with 5 or more bedrooms
-    else:
-        properties = properties.filter(bedrooms__in=bedrooms)  # Filter for selected bedroom options
-
+    # Pass filtered properties and query data back to the template
     return render(request, 'property.html', {
         'properties': properties,
-        'location_query': location_query, 
+        'location_query': location_query,
+        'min_price': min_price,
+        'max_price': max_price,
+        'min_sqft': min_sqft,
+        'max_sqft': max_sqft,
+        'property_type': property_type,
+        'bedrooms': bedrooms,
     })

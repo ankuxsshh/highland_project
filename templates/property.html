@@ -16,16 +16,20 @@
           <p style="font-size: 15px;">Discover Your Perfect Property</p>
           <form method="GET" action="{% url 'property_list' %}" class="row g-3 mb-4">
             <div class="search-bar input-group">
-              <!-- Filter Button -->
-              <button id="openFilter" class="btn btn-primary border-0" type="button"><i class="fa-solid fa-bars"></i></button>
-
-              <!-- Search Input with retained value -->
-              <input type="text" name="location" class="form-control" placeholder="Search for properties by location..." aria-label="Search" value="{{ location_query }}" />
-
-              <!-- Search Button -->
-              <button class="btn btn-primary border-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="openFilter" class="btn btn-primary border-0" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+        
+                <!-- Search input with retained value -->
+                <input type="text" name="location" class="form-control" 
+                       placeholder="Search for properties by location..." 
+                       value="{{ location_query }}" />
+        
+                <button class="btn btn-primary border-0" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </div>
-          </form>
+        </form>        
         </div>
       </div>
     </div>
@@ -212,7 +216,7 @@
       background: white;
       padding: 20px;
       border-radius: 50px 0px 50px 0px;
-      max-width: 600px;
+      max-width: 500px;
       width: 90%;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       transform: scale(0.8);
@@ -232,11 +236,12 @@
       font-family: 'Poppins', sans-serif;
     }
     .custom-dropdown {
-      border-radius: 30px 0px 30px 0px; /* Rounded corners */
+      border-radius: 20px 0px 20px 0px; /* Rounded corners */
       height: 50px;
       width: 120px;
       margin: 20px;
       border: 1px solid #ced4da; /* Adjust border color as needed */
+      text-align: center;
     }
     
     .filter-overlay {
@@ -245,7 +250,7 @@
     
     .filter-card {
       background-color: white; /* Card background */
-      border-radius: 15px; /* Rounded corners for card */
+      border-radius: 30px 0px 30px 0px; /* Rounded corners */
     }
 
     input[type="checkbox"] {
