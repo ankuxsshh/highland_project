@@ -12,28 +12,18 @@
         <div class="intro-text">
           <br /><br />
           <br />
-          <h1 class="display-4 font-weight-bold" style="font-size: 38px;">PROPERTIES</h1>
+          <h1 class="display-4 font-weight-bold" style="font-size: 38px;">OUR PROPERTIES</h1>
           <p style="font-size: 15px;">Discover Your Perfect Property</p>
           <form method="GET" action="{% url 'property_list' %}" class="row g-3 mb-4">
             <div class="search-bar input-group">
-                <button id="openFilter" class="btn btn-primary border-0" type="button">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-        
-                <!-- Search input with retained value -->
-                <input 
-                    type="text" 
-                    name="location" 
-                    class="form-control" 
-                    placeholder="Search for properties by location..." 
-                    value="{{ location_query }}" 
-                />
-        
-                <button class="btn btn-primary border-0" type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+              <button id="openFilter" class="btn btn-primary border-0" type="button"><i class="fa-solid fa-bars"></i></button>
+
+              <!-- Search input with retained value -->
+              <input type="text" name="location" class="form-control" placeholder="Search for properties by location..." value="{{ location_query }}" />
+
+              <button class="btn btn-primary border-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-          </form>        
+          </form>
         </div>
       </div>
     </div>
@@ -49,119 +39,105 @@
           <i class="fa-regular fa-circle-xmark" style="font-size: 25px;"></i>
         </button>
       </div>
+      <form id="propertyFilterForm" action="{% url 'property_list' %}" method="GET">
+        <div class="filter-section" style="height: 400px; overflow-y: auto;">
+          
+          <!-- Search input with retained value -->
+          <div class="mb-4">
+            <label><b style="font-family: 'Poppins', sans-serif;">Location</b></label>
+            <input type="text" name="location" class="form-control" 
+                   placeholder="Search for properties by location..." 
+                   value="{{ location_query }}" 
+                   style="width: 300px; height: 55px; border-radius: 30px 0px 30px 0px;" />
+          </div>
 
-      <div class="filter-section" style="max-height: 400px; overflow-y: auto;">
-        <!-- Property Type Checkboxes -->
-        <div class="mb-4">
-          <label><b style="font-family: 'Poppins', sans-serif;">Property Type</b></label>
-          <div class="d-flex flex-wrap">
-            <label class="me-3">
-              <input type="checkbox" name="property_type" value="Villa" />
-              Villa
-            </label>
-            <label class="me-3">
-              <input type="checkbox" name="property_type" value="Apartment" />
-              Apartment
-            </label>
-            <label class="me-3">
-              <input type="checkbox" name="property_type" value="Studio Flat" />
-              Studio Flat
-            </label>
+          <!-- Property Type Checkboxes -->
+          <div class="mb-4">
+            <label><b style="font-family: 'Poppins', sans-serif;">Property Type</b></label>
+            <div class="d-flex flex-wrap">
+              <label class="me-3"><input type="checkbox" name="property_type" value="Villa" />Villa</label>
+              <label class="me-3"><input type="checkbox" name="property_type" value="Apartment" />Apartment</label>
+              <label class="me-3"><input type="checkbox" name="property_type" value="Studio Flat" />Studio Flat</label>
+            </div>
+          </div>
+
+          <!-- Price Range Dropdown -->
+          <div class="mb-4">
+            <label><b style="font-family: 'Poppins', sans-serif;">Price Range</b></label>
+            <div class="d-flex">
+              <select name="min_price" class="form-select me-2 custom-dropdown">
+                <option value="">Min Price</option>
+                <option value="1000000">10 Lakhs</option>
+                <option value="2000000">20 Lakhs</option>
+                <option value="3000000">30 Lakhs</option>
+                <option value="4000000">40 Lakhs</option>
+                <option value="5000000">50 Lakhs</option>
+                <option value="6000000">60 Lakhs</option>
+                <option value="7000000">70 Lakhs</option>
+                <option value="8000000">80 Lakhs</option>
+                <option value="9000000">90 Lakhs</option>
+                <option value="10000001">1 Crore +</option>
+              </select>
+
+              <select name="max_price" class="form-select custom-dropdown">
+                <option value="">Max Price</option>
+                <option value="1000000">10 Lakhs</option>
+                <option value="2000000">20 Lakhs</option>
+                <option value="3000000">30 Lakhs</option>
+                <option value="4000000">40 Lakhs</option>
+                <option value="5000000">50 Lakhs</option>
+                <option value="6000000">60 Lakhs</option>
+                <option value="7000000">70 Lakhs</option>
+                <option value="8000000">80 Lakhs</option>
+                <option value="9000000">90 Lakhs</option>
+                <option value="10000001">1 Crore +</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Square Feet Dropdown -->
+          <div class="mb-4">
+            <label><b style="font-family: 'Poppins', sans-serif;">Square Feet</b></label>
+            <div class="d-flex">
+              <select name="min_sqft" class="form-select me-2 custom-dropdown">
+                <option value="">Min Sq. Ft.</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="1500">1500</option>
+                <option value="2000">2000</option>
+                <option value="2500">2500</option>
+                <option value="3000">3000</option>
+              </select>
+              <select name="max_sqft" class="form-select custom-dropdown">
+                <option value="">Max Sq. Ft.</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="1500">1500</option>
+                <option value="2000">2000</option>
+                <option value="2500">2500</option>
+                <option value="3000">3000</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Bedrooms Checkboxes -->
+          <div class="mb-4">
+            <label><b style="font-family: 'Poppins', sans-serif;">Bedrooms</b></label>
+            <div class="d-flex flex-wrap">
+              <label class="me-3"><input type="checkbox" name="bedrooms" value="1" />1</label>
+              <label class="me-3"><input type="checkbox" name="bedrooms" value="2" />2</label>
+              <label class="me-3"><input type="checkbox" name="bedrooms" value="3" />3</label>
+              <label class="me-3"><input type="checkbox" name="bedrooms" value="4" />4</label>
+              <label class="me-3"><input type="checkbox" name="bedrooms" value="5" />5+</label>
+            </div>
           </div>
         </div>
 
-        <!-- Price Range Dropdown -->
-        <div class="mb-4">
-          <label><b style="font-family: 'Poppins', sans-serif;">Price Range</b></label>
-          <div class="d-flex">
-            <select name="min_price" class="form-select me-2 custom-dropdown">
-              <option value="">Min Price</option>
-              <option value="1000000">10 Lakhs</option>
-              <option value="2000000">20 Lakhs</option>
-              <option value="3000000">30 Lakhs</option>
-              <option value="4000000">40 Lakhs</option>
-              <option value="5000000">50 Lakhs</option>
-              <option value="6000000">60 Lakhs</option>
-              <option value="7000000">70 Lakhs</option>
-              <option value="8000000">80 Lakhs</option>
-              <option value="9000000">90 Lakhs</option>
-              <option value="10000001">1 Crore +</option>
-            </select>
-
-            <select name="max_price" class="form-select custom-dropdown">
-              <option value="">Max Price</option>
-              <option value="1000000">10 Lakhs</option>
-              <option value="2000000">20 Lakhs</option>
-              <option value="3000000">30 Lakhs</option>
-              <option value="4000000">40 Lakhs</option>
-              <option value="5000000">50 Lakhs</option>
-              <option value="6000000">60 Lakhs</option>
-              <option value="7000000">70 Lakhs</option>
-              <option value="8000000">80 Lakhs</option>
-              <option value="9000000">90 Lakhs</option>
-              <option value="10000001">1 Crore +</option>
-            </select>
-          </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary">Filter now</button>
+          <button type="reset" id="clearFilter" class="btn btn-secondary">Clear</button>
         </div>
-
-        <!-- Square Feet Dropdown -->
-        <div class="mb-4">
-          <label><b style="font-family: 'Poppins', sans-serif;">Square Feet</b></label>
-          <div class="d-flex">
-            <select name="min_sqft" class="form-select me-2 custom-dropdown">
-              <option value="">Min Sq. Ft.</option>
-              <option value="500">500</option>
-              <option value="1000">1000</option>
-              <option value="1500">1500</option>
-              <option value="2000">2000</option>
-              <option value="2500">2500</option>
-              <option value="3000">3000</option>
-            </select>
-            <select name="max_sqft" class="form-select custom-dropdown">
-              <option value="">Max Sq. Ft.</option>
-              <option value="500">500</option>
-              <option value="1000">1000</option>
-              <option value="1500">1500</option>
-              <option value="2000">2000</option>
-              <option value="2500">2500</option>
-              <option value="3000">3000</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Bedrooms Checkboxes -->
-        <div class="mb-4">
-          <label><b style="font-family: 'Poppins', sans-serif;">Bedrooms</b></label>
-          <div class="d-flex flex-wrap">
-            <label class="me-3">
-              <input type="checkbox" name="bedrooms" value="1" />
-              1
-            </label>
-            <label class="me-3">
-              <input type="checkbox" name="bedrooms" value="2" />
-              2
-            </label>
-            <label class="me-3">
-              <input type="checkbox" name="bedrooms" value="3" />
-              3
-            </label>
-            <label class="me-3">
-              <input type="checkbox" name="bedrooms" value="4" />
-              4
-            </label>
-            <label class="me-3">
-              <input type="checkbox" name="bedrooms" value="5" />
-              5+
-            </label>
-          </div>
-        </div>
-      </div>
-      <br />
-      <!-- Action Buttons -->
-      <div class="text-end">
-        <button id="applyFilter" class="btn btn-primary">Filter now</button>
-        <button id="clearFilter" class="btn btn-secondary">Clear</button>
-      </div>
+      </form>
     </div>
   </div>
 </div>
@@ -177,7 +153,7 @@
               <div class="property-info">
                 <h4 style="font-family: 'Poppins', sans-serif;">{{ property.property_name }}</h4>
                 <p>
-                  <b><i class="fas fa-location-dot"></i> {{ property.property_location }}</b>
+                  <i class="fas fa-location-dot"></i> {{ property.property_location }}
                 </p>
                 <p>
                   <i class="fas fa-bed"></i> {{ property.bedrooms }} Bedrooms |
@@ -256,11 +232,11 @@
       background-color: white; /* Card background */
       border-radius: 30px 0px 30px 0px; /* Rounded corners */
     }
-
-    input[type="checkbox"] {
+    
+    input[type='checkbox'] {
       margin-right: 5px; /* Space between checkbox and label */
     }
-
+    
     label {
       display: flex;
       align-items: center; /* Center items vertically */
@@ -307,5 +283,14 @@
     document.getElementById('clearFilter').addEventListener('click', () => {
       window.location.href = "{% url 'property_list' %}"
     })
+  </script>
+  <script>
+    document.getElementById('propertyFilterForm').addEventListener('submit', function (event) {
+      event.preventDefault();  // Prevents page reload on submit
+  
+      const urlParams = new URLSearchParams(new FormData(this)).toString();
+      const baseUrl = '{% url "property_list" %}';
+      window.location.href = `${baseUrl}?${urlParams}`;
+  });  
   </script>
 {% endblock %}

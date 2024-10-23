@@ -51,7 +51,7 @@ def property_list(request):
 
     # Filter by minimum and maximum price
     if min_price:
-        if int(min_price) == 10000001:  # Handle "1 Crore+" case
+        if int(min_price) == 10000001:
             properties = properties.filter(property_price__gt=10000000)
         else:
             properties = properties.filter(property_price__gte=int(min_price))
@@ -69,7 +69,7 @@ def property_list(request):
     if property_type:
         properties = properties.filter(property_type__in=property_type)
 
-    # Filter by bedrooms (including "5+")
+    # Filter by bedrooms
     if bedrooms:
         bedrooms = [int(bedroom) for bedroom in bedrooms]
         if 5 in bedrooms:
@@ -77,7 +77,6 @@ def property_list(request):
         else:
             properties = properties.filter(bedrooms__in=bedrooms)
 
-    # Pass filtered properties and query data back to the template
     return render(request, 'property.html', {
         'properties': properties,
         'location_query': location_query,
