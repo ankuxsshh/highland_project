@@ -251,7 +251,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    width: 450px;
+    width: auto;
     margin: 0 auto; /* Center the search bar */
 }
 
@@ -284,12 +284,12 @@
 /* Mobile adjustments for screens <= 360px */
 @media (max-width: 360px) {
     .search-bar {
-        width: 100%; /* Adjust to 100% of screen width */
+        width: 90%; /* Adjust to 100% of screen width */
         padding: 0 10px; /* Small padding to prevent overflow */
     }
 
     .search-bar input {
-        width: 100%; /* Full width input on mobile */
+        width: 90%; /* Full width input on mobile */
     }
 
     .search-bar button {
