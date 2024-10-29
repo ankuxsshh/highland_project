@@ -29,122 +29,118 @@
     </div>
   </section>
 
-<!-- Filter Panel Overlay -->
-<div id="filterOverlay" class="filter-overlay">
-  <div class="filter-card">
-    <div class="filter-content p-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 style="font-family: 'Poppins', sans-serif;">FILTER PROPERTIES</h4>
-        <button id="closeFilter" class="btn btn-close">
-          <i class="fa-regular fa-circle-xmark" style="font-size: 25px;"></i>
-        </button>
+  <!-- Filter Panel Overlay -->
+  <div id="filterOverlay" class="filter-overlay">
+    <div class="filter-card">
+      <div class="filter-content p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 style="font-family: 'Poppins', sans-serif;">FILTER PROPERTIES</h4>
+          <button id="closeFilter" class="btn btn-close"><i class="fa-regular fa-circle-xmark" style="font-size: 25px;"></i></button>
+        </div>
+        <form id="propertyFilterForm" action="{% url 'property_list' %}" method="GET">
+          <div class="filter-section" style="height: 400px; overflow-y: auto;">
+            <!-- Search input with retained value -->
+            <div class="mb-4">
+              <label><b style="font-family: 'Poppins', sans-serif;">Location</b></label>
+              <input type="text" name="location" class="form-control" placeholder="Search for properties by location..." value="{{ location_query }}" style="width: 300px; height: 55px; border-radius: 30px 0px 30px 0px;" />
+            </div>
+
+            <!-- Property Type Checkboxes -->
+            <div class="mb-4">
+              <label><b style="font-family: 'Poppins', sans-serif;">Property Type</b></label>
+              <div class="d-flex flex-wrap">
+                <label class="me-3"><input type="checkbox" name="property_type" value="Villa" />Villa</label>
+                <label class="me-3"><input type="checkbox" name="property_type" value="Apartment" />Apartment</label>
+                <label class="me-3"><input type="checkbox" name="property_type" value="Studio Flat" />Studio Flat</label>
+              </div>
+            </div>
+
+            <!-- Price Range Dropdown -->
+            <div class="mb-4">
+              <label><b style="font-family: 'Poppins', sans-serif;">Price Range</b></label>
+              <div class="d-flex">
+                <select name="min_price" class="form-select me-2 custom-dropdown">
+                  <option value="">Min Price</option>
+                  <option value="1000000">10 Lakhs</option>
+                  <option value="2000000">20 Lakhs</option>
+                  <option value="3000000">30 Lakhs</option>
+                  <option value="4000000">40 Lakhs</option>
+                  <option value="5000000">50 Lakhs</option>
+                  <option value="6000000">60 Lakhs</option>
+                  <option value="7000000">70 Lakhs</option>
+                  <option value="8000000">80 Lakhs</option>
+                  <option value="9000000">90 Lakhs</option>
+                  <option value="10000001">1 Crore +</option>
+                </select>
+
+                <select name="max_price" class="form-select custom-dropdown">
+                  <option value="">Max Price</option>
+                  <option value="1000000">10 Lakhs</option>
+                  <option value="2000000">20 Lakhs</option>
+                  <option value="3000000">30 Lakhs</option>
+                  <option value="4000000">40 Lakhs</option>
+                  <option value="5000000">50 Lakhs</option>
+                  <option value="6000000">60 Lakhs</option>
+                  <option value="7000000">70 Lakhs</option>
+                  <option value="8000000">80 Lakhs</option>
+                  <option value="9000000">90 Lakhs</option>
+                  <option value="10000001">1 Crore +</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Square Feet Dropdown -->
+            <div class="mb-4">
+              <label><b style="font-family: 'Poppins', sans-serif;">Square Feet</b></label>
+              <div class="d-flex">
+                <select name="min_sqft" class="form-select me-2 custom-dropdown">
+                  <option value="">Min Sq. Ft.</option>
+                  <option value="500">500</option>
+                  <option value="1000">1000</option>
+                  <option value="1500">1500</option>
+                  <option value="2000">2000</option>
+                  <option value="2500">2500</option>
+                  <option value="3000">3000</option>
+                </select>
+                <select name="max_sqft" class="form-select custom-dropdown">
+                  <option value="">Max Sq. Ft.</option>
+                  <option value="500">500</option>
+                  <option value="1000">1000</option>
+                  <option value="1500">1500</option>
+                  <option value="2000">2000</option>
+                  <option value="2500">2500</option>
+                  <option value="3000">3000</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Bedrooms Checkboxes -->
+            <div class="mb-4">
+              <label><b style="font-family: 'Poppins', sans-serif;">Bedrooms</b></label>
+              <div class="d-flex flex-wrap">
+                <label class="me-3"><input type="checkbox" name="bedrooms" value="1" />1</label>
+                <label class="me-3"><input type="checkbox" name="bedrooms" value="2" />2</label>
+                <label class="me-3"><input type="checkbox" name="bedrooms" value="3" />3</label>
+                <label class="me-3"><input type="checkbox" name="bedrooms" value="4" />4</label>
+                <label class="me-3"><input type="checkbox" name="bedrooms" value="5" />5+</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">Filter now</button>
+            <button type="reset" id="clearFilter" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
       </div>
-      <form id="propertyFilterForm" action="{% url 'property_list' %}" method="GET">
-        <div class="filter-section" style="height: 400px; overflow-y: auto;">
-          
-          <!-- Search input with retained value -->
-          <div class="mb-4">
-            <label><b style="font-family: 'Poppins', sans-serif;">Location</b></label>
-            <input type="text" name="location" class="form-control" 
-                   placeholder="Search for properties by location..." 
-                   value="{{ location_query }}" 
-                   style="width: 300px; height: 55px; border-radius: 30px 0px 30px 0px;" />
-          </div>
-
-          <!-- Property Type Checkboxes -->
-          <div class="mb-4">
-            <label><b style="font-family: 'Poppins', sans-serif;">Property Type</b></label>
-            <div class="d-flex flex-wrap">
-              <label class="me-3"><input type="checkbox" name="property_type" value="Villa" />Villa</label>
-              <label class="me-3"><input type="checkbox" name="property_type" value="Apartment" />Apartment</label>
-              <label class="me-3"><input type="checkbox" name="property_type" value="Studio Flat" />Studio Flat</label>
-            </div>
-          </div>
-
-          <!-- Price Range Dropdown -->
-          <div class="mb-4">
-            <label><b style="font-family: 'Poppins', sans-serif;">Price Range</b></label>
-            <div class="d-flex">
-              <select name="min_price" class="form-select me-2 custom-dropdown">
-                <option value="">Min Price</option>
-                <option value="1000000">10 Lakhs</option>
-                <option value="2000000">20 Lakhs</option>
-                <option value="3000000">30 Lakhs</option>
-                <option value="4000000">40 Lakhs</option>
-                <option value="5000000">50 Lakhs</option>
-                <option value="6000000">60 Lakhs</option>
-                <option value="7000000">70 Lakhs</option>
-                <option value="8000000">80 Lakhs</option>
-                <option value="9000000">90 Lakhs</option>
-                <option value="10000001">1 Crore +</option>
-              </select>
-
-              <select name="max_price" class="form-select custom-dropdown">
-                <option value="">Max Price</option>
-                <option value="1000000">10 Lakhs</option>
-                <option value="2000000">20 Lakhs</option>
-                <option value="3000000">30 Lakhs</option>
-                <option value="4000000">40 Lakhs</option>
-                <option value="5000000">50 Lakhs</option>
-                <option value="6000000">60 Lakhs</option>
-                <option value="7000000">70 Lakhs</option>
-                <option value="8000000">80 Lakhs</option>
-                <option value="9000000">90 Lakhs</option>
-                <option value="10000001">1 Crore +</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Square Feet Dropdown -->
-          <div class="mb-4">
-            <label><b style="font-family: 'Poppins', sans-serif;">Square Feet</b></label>
-            <div class="d-flex">
-              <select name="min_sqft" class="form-select me-2 custom-dropdown">
-                <option value="">Min Sq. Ft.</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="1500">1500</option>
-                <option value="2000">2000</option>
-                <option value="2500">2500</option>
-                <option value="3000">3000</option>
-              </select>
-              <select name="max_sqft" class="form-select custom-dropdown">
-                <option value="">Max Sq. Ft.</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="1500">1500</option>
-                <option value="2000">2000</option>
-                <option value="2500">2500</option>
-                <option value="3000">3000</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Bedrooms Checkboxes -->
-          <div class="mb-4">
-            <label><b style="font-family: 'Poppins', sans-serif;">Bedrooms</b></label>
-            <div class="d-flex flex-wrap">
-              <label class="me-3"><input type="checkbox" name="bedrooms" value="1" />1</label>
-              <label class="me-3"><input type="checkbox" name="bedrooms" value="2" />2</label>
-              <label class="me-3"><input type="checkbox" name="bedrooms" value="3" />3</label>
-              <label class="me-3"><input type="checkbox" name="bedrooms" value="4" />4</label>
-              <label class="me-3"><input type="checkbox" name="bedrooms" value="5" />5+</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-end">
-          <button type="submit" class="btn btn-primary">Filter now</button>
-          <button type="reset" id="clearFilter" class="btn btn-secondary">Clear</button>
-        </div>
-      </form>
     </div>
   </div>
-</div>
 
   <section class="properties">
     <div class="container mt-5">
-      <h1 class="text-center"><b>Latest Properties</b></h1>
+      <br />
+      <h1 class="text-center"><b>LATEST PROPERTIES</b></h1>
+      <br />
       <div class="row mt-4">
         {% for property in properties %}
           <div class="col-md-4 mb-4">
@@ -286,11 +282,11 @@
   </script>
   <script>
     document.getElementById('propertyFilterForm').addEventListener('submit', function (event) {
-      event.preventDefault();  // Prevents page reload on submit
-  
-      const urlParams = new URLSearchParams(new FormData(this)).toString();
-      const baseUrl = '{% url "property_list" %}';
-      window.location.href = `${baseUrl}?${urlParams}`;
-  });  
+      event.preventDefault() // Prevents page reload on submit
+    
+      const urlParams = new URLSearchParams(new FormData(this)).toString()
+      const baseUrl = '{% url "property_list" %}'
+      window.location.href = `${baseUrl}?${urlParams}`
+    })
   </script>
 {% endblock %}

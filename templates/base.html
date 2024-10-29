@@ -22,38 +22,26 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'images/highlandlogo.jpg' %}" 
-             alt="Highland Properties Logo" 
-             width="80" height="80" id="logo" />
-      </a>
+      <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/highlandlogo.jpg' %}" alt="Highland Properties Logo" width="80" height="80" id="logo" /></a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" 
-               href="{% url 'index' %}">Home</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'property' %}active{% endif %}" 
-               href="{% url 'property' %}">Properties</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'property' %}active{% endif %}" href="{% url 'property' %}">Properties</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}" 
-               href="{% url 'services' %}">Services</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}" href="{% url 'services' %}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
-               href="{% url 'about' %}">About</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" 
-               href="{% url 'contact' %}">Contact Us</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -61,50 +49,61 @@
 
     <!-- WhatsApp and Call Buttons -->
     <div class="fixed-buttons">
-      <a href="tel:+919846086211" class="btn-whatsapp-pulse call-button" title="Call">
-        <i class="fa-solid fa-phone"></i>
-      </a>
-      <a href="https://wa.me/918946086211" class="btn-whatsapp-pulse whatsapp-button" title="Message on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
+      <a href="tel:+919846086211" class="btn-whatsapp-pulse call-button" title="Call"><i class="fa-solid fa-phone"></i></a>
+      <a href="https://wa.me/918946086211" class="btn-whatsapp-pulse whatsapp-button" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     {% block content %}
+
     {% endblock %}
 
     <!-- Footer -->
     <footer class="footer py-4 border-top bg-white">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 mb-3">
-            <p>
-              Highland Properties is a trusted partner in finding the perfect home or investment. 
-              We specialize in showing a diverse range of properties from cozy apartments to 
-              luxurious estates, all in the most sought-after locations.
-            </p>
+          <div class="col-md-3 mb-3 ">
+            <p>Highland Properties is a trusted partner in finding the perfect home or investment. We specialize in showing a diverse range of properties from cozy apartments to luxurious estates, all in the most sought-after locations.</p>
           </div>
           <div class="col-md-3 mb-3">
             <h5 class="font-weight-bold">Explore</h5>
             <ul class="list-unstyled">
-              <li><a href="{% url 'about' %}" class="text-dark">About Us</a></li>
-              <li><a href="{% url 'contact' %}" class="text-dark">Contact Us</a></li>
-              <li><a href="#" class="text-dark">Privacy Policy</a></li>
+              <li>
+                <a href="{% url 'about' %}" class="text-dark">About Us</a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}" class="text-dark">Contact Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-dark">Privacy Policy</a>
+              </li>
             </ul>
           </div>
           <div class="col-md-3 mb-3">
             <h5 class="font-weight-bold">Services</h5>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-dark">Consulting</a></li>
-              <li><a href="#" class="text-dark">Development</a></li>
-              <li><a href="#" class="text-dark">Support</a></li>
+              <li>
+                <a href="#" class="text-dark">Consulting</a>
+              </li>
+              <li>
+                <a href="#" class="text-dark">Development</a>
+              </li>
+              <li>
+                <a href="#" class="text-dark">Support</a>
+              </li>
             </ul>
           </div>
           <div class="col-md-3 mb-3">
             <h5 class="font-weight-bold">Contact Us</h5>
             <ul class="list-unstyled">
-              <li><a href="mailto:highlandproperties@gmail.com" class="text-dark">highlandproperties@gmail.com</a></li>
-              <li><a href="tel:+919846086211" class="text-dark">+91 98460 86211</a><br /><a href="tel:+919446063333" class="text-dark">+91 94460 63333</a></li>
-              <li><a href="#" class="text-dark">Kerala, India</a></li>
+              <li>
+                <a href="mailto:highlandproperties@gmail.com" class="text-dark">highlandproperties@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+919846086211" class="text-dark">+91 98460 86211</a><br /><a href="tel:+919446063333" class="text-dark">+91 94460 63333</a>
+              </li>
+              <li>
+                <a href="#" class="text-dark">Kerala, India</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -125,13 +124,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       window.addEventListener('scroll', function () {
-        const logo = document.getElementById('logo');
+        const logo = document.getElementById('logo')
         if (window.scrollY > 50) {
-          logo.style.transform = 'scale(0.8)';
+          logo.style.transform = 'scale(0.8)'
         } else {
-          logo.style.transform = 'scale(1)';
+          logo.style.transform = 'scale(1)'
         }
-      });
+      })
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </body>
